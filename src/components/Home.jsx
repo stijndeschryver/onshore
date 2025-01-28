@@ -7,7 +7,7 @@ export const Home = () => {
         <h1>Home</h1>
       </div>
       <div className="wave">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 24">
           <pattern
             id="wavePattern"
             width="255"
@@ -23,7 +23,7 @@ export const Home = () => {
         </svg>
       </div>
       <div className="wave2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 24">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 24">
           <pattern
             id="wavePattern2"
             width="255"
