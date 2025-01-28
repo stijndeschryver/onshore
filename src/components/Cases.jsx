@@ -4,9 +4,6 @@ import axios from 'axios';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
-console.log('All environment variables:', import.meta.env);
-console.log('Specific API URL:', import.meta.env.VITE_API_URL);
-
 export const Cases = () => {
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -16,7 +13,6 @@ export const Cases = () => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        console.log('Fetching from:', `${API_URL}/api/db/cases`); // Log the URL we're fetching from
         const response = await axios.get(`${API_URL}/api/db/cases`);
         const cases = Array.isArray(response.data)
           ? response.data
@@ -38,9 +34,6 @@ export const Cases = () => {
       console.error('Error in fetchData:', err);
     });
   }, []);
-
-  // Debug output of API URL
-  console.log('API_URL:', API_URL);
 
   if (isLoading) return <div className="content">Loading...</div>;
   if (error) return <div className="content">Error: {error}</div>;
