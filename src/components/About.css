@@ -1,0 +1,9 @@
+#about {
+  background-color: #f6c746;
+}
+
+#about .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

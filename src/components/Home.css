@@ -1,0 +1,9 @@
+#home {
+  background-color: #2b5547;
+}
+
+#home .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

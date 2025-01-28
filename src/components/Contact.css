@@ -1,0 +1,9 @@
+#contact {
+  background-color: #fffbf0;
+}
+
+#contact .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

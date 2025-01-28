@@ -1,0 +1,15 @@
+#cases {
+  background-color: #f06847;
+}
+
+#cases .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#cases video {
+  width: 80%;
+  height: auto;
+}

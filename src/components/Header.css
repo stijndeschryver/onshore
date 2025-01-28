@@ -1,0 +1,21 @@
+header {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  justify-content: space-between;
+  padding: 1rem;
+  mix-blend-mode: difference;
+  color: white;
+}
+
+a {
+  margin: 0 0.5rem;
+  cursor: pointer;
+}
+
+header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

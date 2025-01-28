@@ -1,0 +1,35 @@
+# Build output
+dist
+build
+
+# Dependencies
+node_modules
+
+# Cache directories
+.cache
+.eslintcache
+
+# Environment files
+.env*
+
+# Package files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Coverage output
+coverage
+
+# Log files
+*.log
+
+# Editor directories
+.idea
+.vscode
+
+# Generated files
+*.min.js
+*.min.css
+
+# Public assets
+public/
