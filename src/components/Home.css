@@ -18,14 +18,6 @@
   background-color: #f06847;
 }
 
-.wave svg {
-  display: block;
-  color: #f06847;
-  position: absolute;
-  bottom: 100%;
-  width: 100%;
-}
-
 .wave2 {
   position: absolute;
   bottom: 0;
@@ -35,10 +27,39 @@
   background-color: #2b5547;
 }
 
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-255px);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-255px);
+
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.wave svg {
+  display: block;
+  color: #f06847;
+  position: absolute;
+  bottom: 100%;
+  width: calc(255px * 8); /* Ensure enough width to cover the screen seamlessly */
+  animation: slideLeft 5s linear infinite; /* Adjust speed as needed */
+}
+
 .wave2 svg {
   display: block;
   color: #2b5547;
   position: absolute;
   bottom: 100%;
-  width: 100%;
+  width: calc(255px * 8); /* Ensure enough width to cover the screen seamlessly */
+  animation: slideRight 5s linear infinite; /* Adjust speed to differ from wave */
 }
