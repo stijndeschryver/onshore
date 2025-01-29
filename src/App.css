@@ -1,12 +1,11 @@
 section {
-  overflow: hidden;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 10rem;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  position: sticky;
+  top: 0;
 }
 
 .content {

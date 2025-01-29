@@ -1,6 +1,5 @@
 #home {
-  background-color: #f6c746;
-  position: relative;
+  background-color: var(--Saffron);
 }
 
 #home .content {

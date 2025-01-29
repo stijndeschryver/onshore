@@ -1,5 +1,5 @@
 #contact {
-  background-color: #fffbf0;
+  background-color: var(--Cream);
 }
 
 #contact .content {

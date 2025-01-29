@@ -1,6 +1,7 @@
 import './Cases.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Wave } from './Wave.jsx';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -41,6 +42,8 @@ export const Cases = () => {
 
   return (
     <section id="cases">
+      <Wave index={1} />
+      <Wave index={2} />
       <div className="content">
         {data.map((caseItem) => (
           <video controls key={caseItem.id} src={caseItem.video_uri} />

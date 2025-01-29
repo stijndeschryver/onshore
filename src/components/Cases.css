@@ -1,5 +1,5 @@
 #cases {
-  background-color: #2b5547;
+  background-color: var(--Seaweed);
 }
 
 #cases .content {
