@@ -1,5 +1,8 @@
 #home {
   background-color: var(--Saffron);
+  top: 0;
+  z-index: -1;
+  position: sticky;
 }
 
 #home .content {

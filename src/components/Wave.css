@@ -1,7 +1,4 @@
 @keyframes slideLeft {
-  from {
-    transform: translateX(0);
-  }
   to {
     transform: translateX(-255px);
   }
@@ -11,8 +8,11 @@
   from {
     transform: translateX(-255px);
   }
+}
+
+@keyframes stretch {
   to {
-    transform: translateX(0);
+    transform: scaleY(10);
   }
 }
 
@@ -27,6 +27,9 @@
   left: 0;
   width: 100%;
   overflow: hidden;
+  transform-origin: bottom;
+  animation: stretch linear forwards;
+  animation-timeline: view();
 }
 
 .wave svg {
@@ -39,7 +42,7 @@
 }
 
 .wave-1 {
-  height: 100px;
+  height: 70px;
 }
 
 .wave-1 svg {
@@ -52,7 +55,7 @@
 }
 
 .wave-2 {
-  height: 50px;
+  height: 40px;
 }
 
 .wave-2 svg {

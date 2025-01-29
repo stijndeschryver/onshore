@@ -4,8 +4,6 @@ section {
   justify-content: center;
   align-items: center;
   font-size: 10rem;
-  position: sticky;
-  top: 0;
 }
 
 .content {

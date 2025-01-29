@@ -2,6 +2,7 @@ import './Cases.css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Wave } from './Wave.jsx';
+import { WaveCorner } from './WaveCorner.jsx';
 
 const API_URL = import.meta.env.VITE_API_URL;
 
@@ -49,6 +50,7 @@ export const Cases = () => {
           <video controls key={caseItem.id} src={caseItem.video_uri} />
         ))}
       </div>
+      <WaveCorner />
     </section>
   );
 };

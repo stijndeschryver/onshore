@@ -1,8 +1,10 @@
 #cases {
   background-color: var(--Seaweed);
+  position: relative;
 }
 
 #cases .content {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
