@@ -1,18 +1,26 @@
-import { Link } from 'react-router-dom';
 import './Header.css';
+import { Link as RouterLink } from 'react-router-dom';
 
 export const Header = () => {
+  const scrollTo = (id) => {
+    if (id === 'home') {
+      window.scrollTo(0, 0);
+    } else {
+      document.getElementById(id)?.scrollIntoView();
+    }
+  };
+
   return (
     <header>
       <div className="content">
         <div className="logo">
-          <Link to="/">On Shore</Link>
+          <RouterLink to="/">On Shore</RouterLink>
         </div>
         <nav className="nav">
-          <Link to="/">Home</Link>
-          <Link to="/cases">Cases</Link>
-          <Link to="/about">About</Link>
-          <Link to="/contact">Contact</Link>
+          <a onClick={() => scrollTo('home')}>Home</a>
+          <a onClick={() => scrollTo('cases')}>Cases</a>
+          <a onClick={() => scrollTo('about')}>About</a>
+          <a onClick={() => scrollTo('contact')}>Contact</a>
         </nav>
       </div>
     </header>

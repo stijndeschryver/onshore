@@ -4,12 +4,10 @@ import { Home } from './components/Home';
 import { Cases } from './components/Cases';
 import { About } from './components/About';
 import { Contact } from './components/Contact';
-import { ScrollManager } from './components/ScrollManager.js';
 
 export const App = () => {
   return (
     <>
-      <ScrollManager />
       <Header />
       <Home />
       <Cases />

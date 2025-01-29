@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 export const Wave = ({ index }) => {
   const waveId = `wave-${index}`;
   const patternId = `wavePattern-${index}`;
-  const waveBottomId = `waveBottom-${index}`;
 
   return (
     <div className={`wave ${waveId}`}>
