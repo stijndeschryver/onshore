@@ -17,33 +17,37 @@ export const ScrollManager = () => {
         const data = await response.json();
 
         if (data.valid) {
-          const element = document.getElementById(section);
-          if (element) {
-            element.scrollIntoView({
+          if (section === 'home') {
+            // Scroll to top for home section
+            window.scrollTo({
+              top: 0,
               behavior: isFirstRender.current ? 'instant' : 'smooth',
             });
-            isFirstRender.current = false;
+          } else {
+            const element = document.getElementById(section);
+            if (element) {
+              element.scrollIntoView({
+                behavior: isFirstRender.current ? 'instant' : 'smooth',
+              });
+            }
           }
+          isFirstRender.current = false;
         }
       } catch (error) {
         console.error('Error validating section:', error);
       }
     };
 
-    scrollToSection().catch((error) => {
-      console.error('Error in scrollToSection:', error);
-    });
+    scrollToSection();
   }, [location]);
 
   useEffect(() => {
-    // Configuration for the Intersection Observer
     const options = {
-      root: null, // use viewport as root
+      root: null,
       rootMargin: '0px',
-      threshold: 0.5, // trigger when 50% of the section is visible
+      threshold: 0.5,
     };
 
-    // Callback function for the Intersection Observer
     const handleIntersect = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -58,22 +62,30 @@ export const ScrollManager = () => {
       });
     };
 
-    // Create and store the observer
     observerRef.current = new IntersectionObserver(handleIntersect, options);
 
-    // Get all sections and observe them
-    const sections = document.querySelectorAll('section[id]');
+    // Get all sections except home since we're handling it differently
+    const sections = document.querySelectorAll('section[id]:not(#home)');
     sections.forEach((section) => {
       observerRef.current.observe(section);
     });
 
-    // Cleanup function
+    // Add special handling for home section
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        window.history.replaceState(null, '', '/');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
     return () => {
       if (observerRef.current) {
         observerRef.current.disconnect();
       }
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, []); // Empty dependency array since we only want to set this up once
+  }, []);
 
   return null;
 };
