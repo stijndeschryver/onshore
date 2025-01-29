@@ -1,0 +1,56 @@
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-255px);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-255px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+:root {
+  --wave1-color: var(--Terracota);
+  --wave2-color: var(--Seaweed);
+}
+
+.waves {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.waves svg {
+  display: block;
+  position: absolute;
+  bottom: 100%;
+  width: calc(255px * 8);
+}
+
+.wave-1 {
+  height: 100px;
+  background-color: var(--wave1-color);
+}
+
+.wave-1 svg {
+  color: var(--wave1-color);
+  animation: slideLeft 5s linear infinite;
+}
+
+.wave-2 {
+  height: 50px;
+  background-color: var(--wave2-color);
+}
+
+.wave-2 svg {
+  color: var(--wave2-color);
+  animation: slideRight 5s linear infinite;
+}

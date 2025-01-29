@@ -4,3 +4,10 @@ html {
   font-family: 'Rammetto One', sans-serif;
   scroll-snap-type: y mandatory;
 }
+
+:root {
+  --Cream: #fffbf0;
+  --Saffron: #f6c746;
+  --Terracota: #f06847;
+    --Seaweed: #2b5547;
+}
