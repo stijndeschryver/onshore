@@ -21,23 +21,25 @@
   --wave2-color: var(--Seaweed);
 }
 
-.waves {
+.wave {
   position: absolute;
   bottom: 100%;
   left: 0;
   width: 100%;
+  overflow: hidden;
 }
 
-.waves svg {
+.wave svg {
   display: block;
-  position: absolute;
-  bottom: 100%;
   width: calc(255px * 8);
+}
+
+.wave .bottom {
+  height: 100%;
 }
 
 .wave-1 {
   height: 100px;
-  background-color: var(--wave1-color);
 }
 
 .wave-1 svg {
@@ -45,12 +47,19 @@
   animation: slideLeft 5s linear infinite;
 }
 
+.wave-1 .bottom {
+  background-color: var(--wave1-color);
+}
+
 .wave-2 {
   height: 50px;
-  background-color: var(--wave2-color);
 }
 
 .wave-2 svg {
   color: var(--wave2-color);
   animation: slideRight 5s linear infinite;
+}
+
+.wave-2 .bottom {
+  background-color: var(--wave2-color);
 }

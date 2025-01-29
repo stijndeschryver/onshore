@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 export const Wave = ({ index }) => {
   const waveId = `wave-${index}`;
   const patternId = `wavePattern-${index}`;
+  const waveBottomId = `waveBottom-${index}`;
 
   return (
-    <div className={`waves ${waveId}`}>
+    <div className={`wave ${waveId}`}>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 24">
         <pattern
           id={patternId}
@@ -21,6 +22,7 @@ export const Wave = ({ index }) => {
         </pattern>
         <rect width="100%" height="100%" fill={`url(#${patternId})`} />
       </svg>
+      <div className="bottom"></div>
     </div>
   );
 };
