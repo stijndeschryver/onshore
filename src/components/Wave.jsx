@@ -1,9 +1,9 @@
 import './Wave.css';
+import PropTypes from 'prop-types';
 
-export const Wave = ({index}) => {
+export const Wave = ({ index }) => {
   const waveId = `wave-${index}`;
   const patternId = `wavePattern-${index}`;
-
 
   return (
     <div className={`waves ${waveId}`}>
@@ -23,4 +23,8 @@ export const Wave = ({index}) => {
       </svg>
     </div>
   );
+};
+
+Wave.propTypes = {
+  index: PropTypes.number.isRequired,
 };
