@@ -10,11 +10,17 @@ export const Header = () => {
       const observer = new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
+            console.log(
+              'Entry intersecting:',
+              entry.target.id || entry.target.className,
+              entry.isIntersecting
+            );
             if (entry.isIntersecting) {
               const sectionId =
                 entry.target.className === 'home-spacer'
                   ? 'home'
                   : entry.target.id;
+              console.log('Setting current section to:', sectionId);
               setCurrentSection(sectionId);
             }
           });
@@ -22,19 +28,20 @@ export const Header = () => {
         { threshold: 0.5 }
       );
 
-      // Only observe the home-spacer and other sections (not home)
+      // Log what elements we're observing
       const homeSpacerElement = document.querySelector('.home-spacer');
       const otherSections = document.querySelectorAll('section:not(#home)');
+
+      console.log('Home spacer found:', !!homeSpacerElement);
+      console.log('Number of other sections found:', otherSections.length);
 
       if (homeSpacerElement) {
         observer.observe(homeSpacerElement);
       }
 
       otherSections.forEach((section) => {
-        if (section.id !== 'home') {
-          // Extra check to ensure we're not observing home
-          observer.observe(section);
-        }
+        console.log('Observing section:', section.id);
+        observer.observe(section);
       });
 
       return () => {
@@ -45,6 +52,11 @@ export const Header = () => {
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Log when currentSection changes
+  useEffect(() => {
+    console.log('Current section changed to:', currentSection);
+  }, [currentSection]);
 
   const scrollTo = (id) => {
     if (id === 'home') {

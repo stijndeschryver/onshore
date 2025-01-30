@@ -61,7 +61,7 @@ header .content {
 }
 
 .section-contact a {
-  fill: var(--Seaweed);
+  color: var(--Seaweed);
 }
 .section-contact .LogoHeader .on {
   fill: var(--Seaweed);
