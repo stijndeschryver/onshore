@@ -5,20 +5,18 @@ header {
   width: 100%;
   justify-content: space-between;
   padding: 1rem;
-  /*mix-blend-mode: difference;*/
-  /*color: white;*/
 }
 
 a {
   margin: 0 0.5rem;
   cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 header .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: var(--Seaweed);
 }
 
 .LogoHeader {
@@ -26,10 +24,48 @@ header .content {
   height: auto;
 }
 
-.LogoHeader .on {
+.LogoHeader .on,
+.LogoHeader .shore {
+  transition: fill 0.3s ease;
+}
+
+/* Section-specific styles */
+.section-home a {
+  color: var(--Seaweed);
+}
+.section-home .LogoHeader .on {
+  fill: var(--Terracota);
+}
+.section-home .LogoHeader .shore {
+  fill: var(--Seaweed);
+}
+
+.section-cases a {
+  color: var(--Terracota);
+}
+.section-cases .LogoHeader .on {
+  fill: var(--Saffron);
+}
+.section-cases .LogoHeader .shore {
   fill: var(--Terracota);
 }
 
-.LogoHeader .shore {
+.section-about a {
+  color: var(--Seaweed);
+}
+.section-about .LogoHeader .on {
+  fill: var(--Saffron);
+}
+.section-about .LogoHeader .shore {
   fill: var(--Seaweed);
+}
+
+.section-contact a {
+  color: var(--Seaweed);
+}
+.section-contact .LogoHeader .on {
+  fill: var(--Seaweed);
+}
+.section-contact .LogoHeader .shore {
+  fill: var(--Terracota);
 }
