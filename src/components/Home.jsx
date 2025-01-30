@@ -3,12 +3,13 @@ import { Logo } from './Logo';
 
 export const Home = () => {
   return (
-    <div className="snap-container">
+    <>
+      <div className="home-spacer" />
       <section id="home">
         <div className="content">
           <Logo className="Logo" />
         </div>
       </section>
-    </div>
+    </>
   );
 };

@@ -1,19 +1,23 @@
 #home {
   background-color: var(--Saffron);
+  /*height: 100vh;*/
+  position: fixed;
   top: 0;
+  /*left: 0;*/
+  width: 100%;
   z-index: -1;
-  position: sticky;
+}
+
+.home-spacer {
+  height: 100vh;
+  width: 100%;
+  /*position: relative;*/
 }
 
 #home .content {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.snap-container {
-  position: relative;
-  height: 100vh;
 }
 
 .Logo {
