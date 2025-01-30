@@ -18,6 +18,7 @@ header .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: var(--Seaweed);
 }
 
 .LogoHeader {
@@ -26,7 +27,7 @@ header .content {
 }
 
 .LogoHeader .on {
-  fill: var(--Saffron);
+  fill: var(--Terracota);
 }
 
 .LogoHeader .shore {
