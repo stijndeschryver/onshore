@@ -44,24 +44,24 @@ header .content {
   color: var(--Terracota);
 }
 .section-cases .LogoHeader .on {
-  fill: var(--Saffron);
+  fill: var(--Terracota);
 }
 .section-cases .LogoHeader .shore {
-  fill: var(--Terracota);
+  fill: var(--Saffron);
 }
 
 .section-about a {
   color: var(--Seaweed);
 }
 .section-about .LogoHeader .on {
-  fill: var(--Saffron);
+  fill: var(--Seaweed);
 }
 .section-about .LogoHeader .shore {
-  fill: var(--Seaweed);
+  fill: var(--Saffron);
 }
 
 .section-contact a {
-  color: var(--Seaweed);
+  fill: var(--Seaweed);
 }
 .section-contact .LogoHeader .on {
   fill: var(--Seaweed);
