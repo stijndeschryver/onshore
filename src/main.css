@@ -3,6 +3,7 @@
 html {
   font-family: 'Rammetto One', sans-serif;
   scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
 }
 
 :root {
