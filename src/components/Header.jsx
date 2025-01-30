@@ -1,5 +1,5 @@
 import './Header.css';
-import { Link as RouterLink } from 'react-router-dom';
+import { LogoHeader } from './LogoHeader.jsx';
 
 export const Header = () => {
   const scrollTo = (id) => {
@@ -13,9 +13,7 @@ export const Header = () => {
   return (
     <header>
       <div className="content">
-        <div className="logo">
-          <RouterLink to="/">On Shore</RouterLink>
-        </div>
+        <LogoHeader className="LogoHeader" />
         <nav className="nav">
           <a onClick={() => scrollTo('home')}>Home</a>
           <a onClick={() => scrollTo('cases')}>Cases</a>

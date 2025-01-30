@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap');
 
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/muli/Muli.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
-  font-family: 'Rammetto One', sans-serif;
+  font-family: 'Muli', sans-serif;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Rammetto One', sans-serif;
 }
 
 :root {
