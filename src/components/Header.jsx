@@ -10,15 +10,26 @@ export const Header = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
+            // Get the ID from the section or use 'home' for home-spacer
+            const sectionId =
+              entry.target.className === 'home-spacer'
+                ? 'home'
+                : entry.target.id;
+            setCurrentSection(sectionId);
           }
         });
       },
       { threshold: 0.5 }
     );
 
-    // Observe all sections
-    document.querySelectorAll('section').forEach((section) => {
+    // Observe the home spacer
+    const homeSpacerElement = document.querySelector('.home-spacer');
+    if (homeSpacerElement) {
+      observer.observe(homeSpacerElement);
+    }
+
+    // Observe all other sections
+    document.querySelectorAll('section:not(#home)').forEach((section) => {
       observer.observe(section);
     });
 
