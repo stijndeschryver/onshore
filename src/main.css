@@ -60,3 +60,9 @@ h1 {
   --Terracota: #f06847;
   --Seaweed: #203931ff;
 }
+
+:root {
+  --wave1-color: var(--Terracota);
+  --wave2-color: var(--Seaweed);
+  --wave3-color: var(--Cream);
+}

@@ -66,10 +66,6 @@
   font-weight: 700;
 }
 
-:root {
-  --wave3-color: var(--Cream);
-}
-
 #contact .wave {
   position: absolute;
   bottom: 100%;

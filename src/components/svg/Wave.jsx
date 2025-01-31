@@ -1,13 +1,52 @@
-import './Wave.css';
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 export const Wave = ({ index }) => {
+  const waveRef = useRef(null);
+  useEffect(() => {
+    const element = waveRef.current;
+    if (!element) return;
+
+    const handleScroll = () => {
+      const rect = element.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Calculate how far the element is through the viewport
+      const distanceFromTop = rect.top;
+      // Calculate the progress (0 to 1) based on element position
+      let progress = 1 - distanceFromTop / viewportHeight;
+      progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+
+      // Calculate scale based on progress (1 to 10)
+      const scale = 1 + progress * 9; // Will scale from 1 to 10
+
+      element.style.transform = `scaleY(${scale})`;
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   const waveId = `wave-${index}`;
   const patternId = `wavePattern-${index}`;
 
   return (
-    <div className={`wave ${waveId}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 24">
+    <div ref={waveRef} className={`wave ${waveId}`}>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 2040 24"
+        style={{
+          willChange: 'transform',
+          backfaceVisibility: 'hidden',
+        }}
+      >
         <pattern
           id={patternId}
           width="255"

@@ -1,16 +1,31 @@
+@keyframes slideLeft {
+  to {
+    transform: translateX(-255px);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-255px);
+  }
+}
+
+@keyframes stretch {
+  to {
+    transform: scaleY(10);
+  }
+}
+
 .wave {
   overflow: hidden;
   transform-origin: bottom;
-  transform: scaleY(1);
-  will-change: transform;
-  transition: transform 0.1s linear;
+  animation: stretch linear forwards;
+  animation-timeline: view();
 }
 
 .wave svg {
   display: block;
   width: calc(255px * 8);
-  transform: translateX(0);
-  will-change: transform;
 }
 
 .wave .bottom {
@@ -23,7 +38,7 @@
 
 .wave-1 svg {
   color: var(--wave1-color);
-  animation: wave1Slide 5s linear infinite;
+  animation: slideLeft 5s linear infinite;
   margin-bottom: -0.3px;
 }
 
@@ -37,7 +52,7 @@
 
 .wave-2 svg {
   color: var(--wave2-color);
-  animation: wave2Slide 5s linear infinite;
+  animation: slideRight 5s linear infinite;
   margin-bottom: -0.3px;
 }
 
@@ -56,22 +71,4 @@
 
 .wave-3 .bottom {
   background-color: var(--wave3-color);
-}
-
-@keyframes wave1Slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-255px);
-  }
-}
-
-@keyframes wave2Slide {
-  0% {
-    transform: translateX(-255px);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }

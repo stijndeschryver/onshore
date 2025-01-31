@@ -20,11 +20,6 @@
   height: auto;
 }
 
-:root {
-  --wave1-color: var(--Terracota);
-  --wave2-color: var(--Seaweed);
-}
-
 #cases .wave {
   position: absolute;
   bottom: 100%;
