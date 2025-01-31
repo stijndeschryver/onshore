@@ -15,3 +15,29 @@
   width: 80%;
   height: auto;
 }
+
+:root {
+  --wave1-color: var(--Terracota);
+  --wave2-color: var(--Seaweed);
+}
+
+.wave {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.wave-1 {
+  height: 70px;
+}
+
+.wave-2 {
+  height: 40px;
+}
+.wave-corner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+}

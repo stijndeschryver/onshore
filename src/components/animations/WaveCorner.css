@@ -20,12 +20,6 @@
   animation: waveAnimation 8s infinite linear;
 }
 
-.wave-corner {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 50%;
-}
 .wave-corner svg {
   color: var(--Terracota);
   display: block;

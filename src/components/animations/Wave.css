@@ -16,16 +16,7 @@
   }
 }
 
-:root {
-  --wave1-color: var(--Terracota);
-  --wave2-color: var(--Seaweed);
-}
-
 .wave {
-  position: absolute;
-  bottom: 100%;
-  left: 0;
-  width: 100%;
   overflow: hidden;
   transform-origin: bottom;
   animation: stretch linear forwards;
@@ -42,7 +33,7 @@
 }
 
 .wave-1 {
-  height: 70px;
+  margin-bottom: 0.3px;
 }
 
 .wave-1 svg {
@@ -56,7 +47,7 @@
 }
 
 .wave-2 {
-  height: 40px;
+  margin-bottom: -0.3px;
 }
 
 .wave-2 svg {
