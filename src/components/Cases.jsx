@@ -1,6 +1,6 @@
 import './Cases.css';
-import { Wave } from './animations/Wave.jsx';
-import { WaveCorner } from './animations/WaveCorner.jsx';
+import { Wave } from './svg/Wave.jsx';
+import { WaveCorner } from './svg/WaveCorner.jsx';
 import { useCases } from '../hooks/useCases.js';
 
 export const Cases = () => {
@@ -11,6 +11,7 @@ export const Cases = () => {
       <Wave index={1} />
       <Wave index={2} />
       <div className="content">
+        <h1>Cases</h1>
         {error ? (
           <div>Error: {error}</div>
         ) : (

@@ -6,13 +6,17 @@
 #cases .content {
   z-index: 1;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+#cases .content h1 {
+  color: var(--Saffron);
 }
 
 #cases video {
-  width: 80%;
+  width: 50rem;
   height: auto;
 }
 
@@ -21,20 +25,21 @@
   --wave2-color: var(--Seaweed);
 }
 
-.wave {
+#cases .wave {
   position: absolute;
   bottom: 100%;
   left: 0;
   width: 100%;
 }
 
-.wave-1 {
+#cases .wave-1 {
   height: 70px;
 }
 
-.wave-2 {
+#cases .wave-2 {
   height: 40px;
 }
+
 .wave-corner {
   position: absolute;
   bottom: 0;

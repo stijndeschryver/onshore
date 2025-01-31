@@ -2,8 +2,36 @@
 
 @font-face {
   font-family: 'Muli';
+  src: url('./assets/muli/Muli-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/muli/Muli-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
   src: url('./assets/muli/Muli.ttf') format('truetype');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/muli/Muli-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: url('./assets/muli/Muli-Bold.ttf') format('truetype');
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -20,6 +48,10 @@ h4,
 h5,
 h6 {
   font-family: 'Rammetto One', sans-serif;
+}
+
+h1 {
+  font-size: 5rem;
 }
 
 :root {

@@ -1,9 +1,79 @@
 #contact {
   background-color: var(--Cream);
+  position: relative;
 }
 
 #contact .content {
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+}
+
+#contact .content .image {
+  background: white;
+  height: 30rem;
+  width: 25rem;
+}
+
+#contact .content .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#contact .content .info h1 {
+  color: var(--Terracota);
+}
+
+#contact .content .info .personal {
+  display: flex;
   align-items: center;
+  gap: 2rem;
+}
+
+#contact .content .info .personal .personal-photo {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  outline: 2px solid var(--Terracota);
+  background-image: url('../assets/jurgen.jpeg');
+  background-size: cover;
+  background-position: center;
+}
+
+#contact .content .info .personal .personal-name {
+  font-weight: 700;
+  color: var(--Seaweed);
+}
+
+#contact .content .info .personal .personal-phone {
+  font-weight: 700;
+  color: var(--Seaweed);
+  font-size: 1.5rem;
+}
+
+#contact .content .info .personal .personal-email {
+  color: var(--Terracota);
+}
+
+#contact .content .info .general {
+  color: var(--Terracota);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+#contact .content .info .general .general-email {
+  font-weight: 700;
+}
+
+:root {
+  --wave3-color: var(--Cream);
+}
+
+#contact .wave {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  width: 100%;
+  height: 40px;
 }

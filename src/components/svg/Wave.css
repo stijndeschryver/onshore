@@ -59,3 +59,16 @@
 .wave-2 .bottom {
   background-color: var(--wave2-color);
 }
+
+.wave-3 {
+  margin-bottom: -0.3px;
+}
+
+.wave-3 svg {
+  color: var(--wave3-color);
+  margin-bottom: -0.3px;
+}
+
+.wave-3 .bottom {
+  background-color: var(--wave3-color);
+}

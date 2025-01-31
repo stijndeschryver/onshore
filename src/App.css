@@ -1,17 +1,12 @@
 section {
-  min-height: 100vh;
-  /*height: 100vh;*/
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10rem;
   scroll-snap-align: start;
-  /*position: relative;*/
-  /*width: 100%;*/
 }
 
 .content {
-  width: 100%;
   max-width: 1440px;
-  margin-inline: auto;
+  width: fit-content;
 }

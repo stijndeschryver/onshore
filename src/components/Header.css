@@ -11,10 +11,13 @@ a {
   margin: 0 0.5rem;
   cursor: pointer;
   transition: color 0.3s ease;
+  border-bottom: 2px solid transparent; /* prevent layout shift */
 }
 
 header .content {
   display: flex;
+  width: 100%;
+  margin-inline: auto;
   justify-content: space-between;
   align-items: center;
 }
@@ -27,6 +30,15 @@ header .content {
 .LogoHeader .on,
 .LogoHeader .shore {
   transition: fill 0.3s ease;
+}
+
+header a.active {
+  font-weight: 700;
+  border-bottom: 2px solid;
+}
+
+header a:hover {
+  font-weight: 700;
 }
 
 /* Section-specific styles */

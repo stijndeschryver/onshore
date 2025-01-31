@@ -4,6 +4,53 @@
 
 #about .content {
   display: flex;
+  flex-direction: column;
+  gap: 4rem;
   justify-content: center;
   align-items: center;
+}
+
+#about .content h1 {
+  color: var(--Seaweed);
+}
+
+#about .content p {
+  width: 50rem;
+  text-align: center;
+  color: var(--Cream);
+  font-weight: 200;
+}
+
+#about .content .cards {
+  display: flex;
+  gap: 1rem;
+}
+
+#about .content .cards .card {
+  width: 20rem;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+}
+
+#about .content .cards .card:not(:last-child) {
+  padding-right: 0.5rem;
+  border-right: 1px solid var(--Saffron);
+}
+
+#about .content .cards .card .logo {
+  width: 80%;
+}
+
+#about .content .cards .card .logo .on {
+  fill: var(--Cream);
+}
+
+#about .content .cards .card .logo .shore {
+  fill: var(--Saffron);
+}
+
+#about .content .cards .card p {
+  text-align: left;
+  max-width: 100%;
 }
