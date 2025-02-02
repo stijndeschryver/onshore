@@ -1,23 +1,22 @@
 #home {
   background-color: var(--Saffron);
-  /*height: 100vh;*/
   position: fixed;
   top: 0;
-  /*left: 0;*/
   width: 100%;
   z-index: -1;
+  height: 100vh;
 }
 
 .home-spacer {
   height: 100dvh;
   width: 100%;
-  /*position: relative;*/
 }
 
 #home .content {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  width: fit-content;
 }
 
 #home .content .Logo {
