@@ -92,6 +92,11 @@
     background-color: var(--Terracota);
   }
 
+  .nav-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
   .nav-arrow {
     fill: var(--Cream);
     width: 32px;
