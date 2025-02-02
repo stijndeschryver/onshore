@@ -13,13 +13,21 @@ export const Contact = () => {
             <div className="personal-photo"></div>
             <div className="personal-info">
               <p className="personal-name">Jurgen</p>
-              <p className="personal-phone">+32 000 00 00 00</p>
-              <p className="personal-email">jurgen@onshore.com</p>
+              <a href="tel:+32000000000" className="personal-phone">
+                +32 000 00 00 00
+              </a>
+              <a href="mailto:jurgen@onshore.com" className="personal-email">
+                jurgen@onshore.com
+              </a>
             </div>
           </div>
           <div className="general">
-            <p className="general-phone">+32 000 00 00 00</p>
-            <p className="general-email">info@onshore.com</p>
+            <a href="tel:+32000000000" className="general-phone">
+              +32 000 00 00 00
+            </a>
+            <a href="mailto:info@onshore.com" className="general-email">
+              info@onshore.com
+            </a>
             <p className="general-address">
               Gare Maritime
               <br />

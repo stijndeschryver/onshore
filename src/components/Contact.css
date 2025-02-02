@@ -38,6 +38,7 @@
   background-image: url('../assets/jurgen.jpeg');
   background-size: cover;
   background-position: center;
+  flex-shrink: 0;
 }
 
 #contact .content .info .personal .personal-name {
@@ -49,10 +50,12 @@
   font-weight: 700;
   color: var(--Seaweed);
   font-size: 1.5rem;
+  display: block;
 }
 
 #contact .content .info .personal .personal-email {
   color: var(--Terracota);
+  display: block;
 }
 
 #contact .content .info .general {
@@ -74,8 +77,15 @@
   height: 40px;
 }
 
+#contact a {
+  text-decoration: none !important;
+}
+
 @media (max-width: 768px) {
   #contact .content .image {
     display: none;
+  }
+  #contact .content .info {
+    gap: 2rem;
   }
 }
