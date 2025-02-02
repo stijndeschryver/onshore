@@ -16,7 +16,15 @@ export const Cases = () => {
           <div>Error: {error}</div>
         ) : (
           data.map((caseItem) => (
-            <video controls key={caseItem.id} src={caseItem.video_uri} />
+            <video
+              key={caseItem.id}
+              src={caseItem.video_uri}
+              autoPlay
+              loop
+              muted
+              playsInline
+              controls={false}
+            />
           ))
         )}
       </div>
