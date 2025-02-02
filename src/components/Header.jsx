@@ -2,36 +2,50 @@ import './Header.css';
 import { LogoHeader } from './svg/LogoHeader.jsx';
 import { useCurrentSection } from '../hooks/useCurrentSection.js';
 import { scrollToSection } from '../utils/scrollUtils.js';
+import { useState } from 'react';
+import { BurgerMenu } from './BurgerMenu';
 
 export const Header = () => {
   const currentSection = useCurrentSection();
-  console.log('Current section:', currentSection); // Add this
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavClick = (section) => {
+    scrollToSection(section);
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className={`section-${currentSection}`}>
+    <header
+      className={`section-${currentSection} ${isMenuOpen ? 'menu-open' : ''}`}
+    >
       <div className="content">
         <LogoHeader className="LogoHeader" />
-        <nav className="nav">
+        <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
           <a
-            onClick={() => scrollToSection('home')}
+            onClick={() => handleNavClick('home')}
             className={currentSection === 'home' ? 'active' : ''}
           >
             Home
           </a>
           <a
-            onClick={() => scrollToSection('cases')}
+            onClick={() => handleNavClick('cases')}
             className={currentSection === 'cases' ? 'active' : ''}
           >
             Cases
           </a>
           <a
-            onClick={() => scrollToSection('about')}
+            onClick={() => handleNavClick('about')}
             className={currentSection === 'about' ? 'active' : ''}
           >
             About
           </a>
           <a
-            onClick={() => scrollToSection('contact')}
+            onClick={() => handleNavClick('contact')}
             className={currentSection === 'contact' ? 'active' : ''}
           >
             Contact
