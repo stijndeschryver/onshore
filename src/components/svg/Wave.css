@@ -18,13 +18,13 @@
 }
 
 .wave-1 {
-  margin-bottom: 0.3px;
+  margin-bottom: 1px;
 }
 
 .wave-1 svg {
   color: var(--wave1-color);
   animation: wave1Slide 5s linear infinite;
-  margin-bottom: -0.3px;
+  margin-bottom: -1px;
 }
 
 .wave-1 .bottom {
@@ -32,13 +32,13 @@
 }
 
 .wave-2 {
-  margin-bottom: -0.3px;
+  margin-bottom: -1px;
 }
 
 .wave-2 svg {
   color: var(--wave2-color);
   animation: wave2Slide 5s linear infinite;
-  margin-bottom: -0.3px;
+  margin-bottom: -1px;
 }
 
 .wave-2 .bottom {
@@ -46,12 +46,12 @@
 }
 
 .wave-3 {
-  margin-bottom: -0.3px;
+  margin-bottom: -1px;
 }
 
 .wave-3 svg {
   color: var(--wave3-color);
-  margin-bottom: -0.3px;
+  margin-bottom: -1px;
 }
 
 .wave-3 .bottom {

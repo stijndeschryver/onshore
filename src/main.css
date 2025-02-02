@@ -35,6 +35,19 @@
   font-style: normal;
 }
 
+:root {
+  --Cream: #fffbf0;
+  --Saffron: #f6c746;
+  --Terracota: #f06847;
+  --Seaweed: #203931ff;
+}
+
+:root {
+  --wave1-color: var(--Terracota);
+  --wave2-color: var(--Seaweed);
+  --wave3-color: var(--Cream);
+}
+
 html {
   font-family: 'Muli', sans-serif;
   scroll-behavior: smooth;
@@ -53,16 +66,15 @@ h6 {
 h1 {
   font-size: 5rem;
 }
-
-:root {
-  --Cream: #fffbf0;
-  --Saffron: #f6c746;
-  --Terracota: #f06847;
-  --Seaweed: #203931ff;
+h2 {
+  font-size: 3rem;
 }
 
-:root {
-  --wave1-color: var(--Terracota);
-  --wave2-color: var(--Seaweed);
-  --wave3-color: var(--Cream);
+@media (max-width: 768px) {
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
 }

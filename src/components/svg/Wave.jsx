@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import './Wave.css';
 
 export const Wave = ({ index }) => {
   const waveRef = useRef(null);
@@ -8,18 +9,25 @@ export const Wave = ({ index }) => {
     if (!element) return;
 
     const handleScroll = () => {
-      const rect = element.getBoundingClientRect();
+      const parentRect = element.parentElement.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Calculate how far the element is through the viewport
-      const distanceFromTop = rect.top;
-      // Calculate the progress (0 to 1) based on element position
-      let progress = 1 - distanceFromTop / viewportHeight;
-      progress = Math.max(0, Math.min(1, progress)); // Clamp between 0 and 1
+      // Only start scaling when the parent section comes into view
+      if (parentRect.top > viewportHeight) {
+        element.style.transform = 'scaleY(1)';
+        element.style.transformOrigin = 'bottom';
+        return;
+      }
 
-      // Calculate scale based on progress (1 to 10)
-      const scale = 1 + progress * 9; // Will scale from 1 to 10
+      // Calculate progress based on parent section's position
+      const parentProgress = (viewportHeight - parentRect.top) / viewportHeight;
+      const progress = Math.max(0, Math.min(1, parentProgress));
 
+      // Scale from 1 to 3 instead of 1 to 10 for more subtle effect
+      const scale = 1 + progress * 10;
+
+      // Apply transform with explicit origin
+      element.style.transformOrigin = 'bottom';
       element.style.transform = `scaleY(${scale})`;
     };
 
@@ -38,7 +46,11 @@ export const Wave = ({ index }) => {
   const patternId = `wavePattern-${index}`;
 
   return (
-    <div ref={waveRef} className={`wave ${waveId}`}>
+    <div
+      ref={waveRef}
+      className={`wave ${waveId}`}
+      style={{ transformOrigin: 'bottom' }}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 2040 24"

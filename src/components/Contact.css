@@ -73,3 +73,9 @@
   width: 100%;
   height: 40px;
 }
+
+@media (max-width: 768px) {
+  #contact .content .image {
+    display: none;
+  }
+}
