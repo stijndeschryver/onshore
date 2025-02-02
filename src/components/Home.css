@@ -4,11 +4,10 @@
   top: 0;
   width: 100%;
   z-index: -1;
-  height: 100vh;
 }
 
 .home-spacer {
-  height: 100dvh;
+  height: 100svh;
   width: 100%;
 }
 
