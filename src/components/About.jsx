@@ -156,11 +156,7 @@ export const About = () => {
             {originalCards.map((card) => {
               const SvgComponent = card.svg;
               return (
-                <div
-                  key={card.id}
-                  className="card"
-                  style={{ scrollSnapAlign: 'start' }}
-                >
+                <div key={card.id} className="card">
                   <SvgComponent className="logo" />
                   <p>{card.content}</p>
                 </div>
