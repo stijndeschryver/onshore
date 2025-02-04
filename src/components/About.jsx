@@ -57,7 +57,8 @@ export const About = () => {
 
     const container = cardsRef.current;
     const cardWidth = container.firstElementChild?.offsetWidth || 0;
-    const gap = 32; // 2rem gap
+    // Get the computed gap from CSS variables
+    const gap = parseInt(getComputedStyle(container).gap) || 16;
     const totalCardWidth = cardWidth + gap;
     const scrollPosition = container.scrollLeft;
     const maxScroll = container.scrollWidth - container.clientWidth;
@@ -119,7 +120,8 @@ export const About = () => {
 
     const container = cardsRef.current;
     const cardWidth = container.firstElementChild?.offsetWidth || 0;
-    const scrollAmount = cardWidth + 32; // card width + gap (2rem = 32px)
+    const gap = parseInt(getComputedStyle(container).gap) || 16;
+    const scrollAmount = cardWidth + gap;
 
     if (direction === 'next') {
       container.scrollBy({ left: scrollAmount, behavior: 'smooth' });

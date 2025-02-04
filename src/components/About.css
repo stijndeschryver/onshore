@@ -1,4 +1,7 @@
 #about {
+  --card-width: 20rem;
+  --visible-cards: 4;
+  --gap: 1rem;
   background-color: var(--Terracota);
 }
 
@@ -36,10 +39,13 @@
 
 #about .content .cards {
   display: flex;
-  gap: 1rem;
+  gap: var(--gap);
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  width: calc(20rem * 4 + 6rem); /* 4 cards + gaps */
+  width: calc(
+    (var(--card-width) * var(--visible-cards)) +
+      (var(--gap) * (var(--visible-cards) - 1))
+  );
   -ms-overflow-style: none;
   scrollbar-width: none;
   transform: translate3d(0, 0, 0);
@@ -51,7 +57,8 @@
 }
 
 #about .content .cards .card {
-  width: 20rem;
+  width: var(--card-width);
+  min-width: var(--card-width);
   display: flex;
   gap: 1rem;
   flex-direction: column;
@@ -104,34 +111,32 @@
   height: 32px;
 }
 
-/* Responsive layouts */
-@media (max-width: 1200px) {
-  #about .content .cards {
-    width: calc(20rem * 3 + 4rem); /* 3 cards + gaps */
+@media (max-width: 1440px) {
+  #about {
+    --visible-cards: 3;
   }
   .nav-button {
     display: flex;
   }
 }
 
-@media (max-width: 992px) {
-  #about .content .cards {
-    width: calc(20rem * 2 + 2rem); /* 2 cards + gap */
+@media (max-width: 1200px) {
+  #about {
+    --visible-cards: 2;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 834px) {
+  #about {
+    --visible-cards: 1;
+  }
+
   #about .content p {
-    width: 20rem;
+    width: var(--card-width);
   }
 
   .cards-container {
-    gap: 1rem;
     overflow: hidden;
-  }
-
-  #about .content .cards {
-    width: 20rem; /* Single card */
   }
 
   #about .content .cards .card:not(:last-child) {
