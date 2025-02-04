@@ -57,14 +57,17 @@
 }
 
 #about .content .cards .card .logo {
-  width: 80%;
+  height: 2rem;
 }
 
 #about .content .cards .card .logo .on {
   fill: var(--Cream);
 }
 
-#about .content .cards .card .logo .shore {
+#about .content .cards .card .logo .brief,
+#about .content .cards .card .logo .culture,
+#about .content .cards .card .logo .time,
+#about .content .cards .card .logo .budget {
   fill: var(--Saffron);
 }
 
