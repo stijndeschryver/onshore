@@ -1,5 +1,5 @@
 section {
-  height: 100svh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;

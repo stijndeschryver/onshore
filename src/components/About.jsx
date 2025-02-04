@@ -10,6 +10,7 @@ export const About = () => {
   const cardsRef = useRef(null);
   const [isAtStart, setIsAtStart] = useState(true);
   const [isAtEnd, setIsAtEnd] = useState(false);
+  const [visibleCards, setVisibleCards] = useState(4);
 
   const originalCards = [
     {
@@ -34,9 +35,22 @@ export const About = () => {
       id: 'OnBudget',
       svg: OnBudget,
       content:
-        'No hidden fees, no surprises. Our fixed pricing means you know exactly what you’re paying for—top-quality work at a fair price.',
+        "No hidden fees, no surprises. Our fixed pricing means you know exactly what you're paying for—top-quality work at a fair price.",
     },
   ];
+
+  const updateVisibleCards = () => {
+    const width = window.innerWidth;
+    if (width > 1200) {
+      setVisibleCards(4);
+    } else if (width > 992) {
+      setVisibleCards(3);
+    } else if (width > 768) {
+      setVisibleCards(2);
+    } else {
+      setVisibleCards(1);
+    }
+  };
 
   const checkScrollPosition = () => {
     if (!cardsRef.current) return;
@@ -45,43 +59,32 @@ export const About = () => {
     const cardWidth = container.firstElementChild?.offsetWidth || 0;
     const gap = 32; // 2rem gap
     const totalCardWidth = cardWidth + gap;
-
-    // Calculate what percentage of the next/previous card is visible
     const scrollPosition = container.scrollLeft;
     const maxScroll = container.scrollWidth - container.clientWidth;
 
-    // Calculate which card we're currently on (0-based index)
+    // Calculate the number of cards that can be scrolled
+    const scrollableCards = originalCards.length - visibleCards;
+
+    // Calculate current card index based on scroll position
     const currentCardIndex = Math.round(scrollPosition / totalCardWidth);
 
-    // Calculate the expected scroll position for this card
-    const expectedScrollPosition = currentCardIndex * totalCardWidth;
-
-    // Check if we're more than 50% towards the next or previous position
-    const scrollDifference = Math.abs(scrollPosition - expectedScrollPosition);
-    const isMovingToNext = scrollPosition > expectedScrollPosition;
-
-    // Disable previous button if we're at the start or moving towards the first card
-    setIsAtStart(
-      currentCardIndex === 0 &&
-        (!isMovingToNext || scrollDifference < totalCardWidth * 0.5)
-    );
-
-    // Disable next button if we're at the end or moving towards the last card
+    // Update navigation buttons state
+    setIsAtStart(scrollPosition <= 0);
     setIsAtEnd(
-      currentCardIndex === originalCards.length - 1 ||
-        Math.abs(maxScroll - scrollPosition) < totalCardWidth * 0.5
+      currentCardIndex >= scrollableCards ||
+        Math.abs(maxScroll - scrollPosition) < 5
     );
   };
 
   useEffect(() => {
+    // Initial setup
+    updateVisibleCards();
+    checkScrollPosition();
+
+    // Add event listeners
     const container = cardsRef.current;
     if (container) {
-      // Check initial position
-      checkScrollPosition();
-      // Add scroll event listener
       container.addEventListener('scroll', checkScrollPosition);
-      // Add resize listener to handle window size changes
-      window.addEventListener('resize', checkScrollPosition);
 
       // Set up intersection observer for smoother updates
       const observer = new IntersectionObserver(
@@ -95,13 +98,21 @@ export const About = () => {
         observer.observe(card);
       });
 
+      // Handle window resize
+      const handleResize = () => {
+        updateVisibleCards();
+        checkScrollPosition();
+      };
+
+      window.addEventListener('resize', handleResize);
+
       return () => {
         container.removeEventListener('scroll', checkScrollPosition);
-        window.removeEventListener('resize', checkScrollPosition);
+        window.removeEventListener('resize', handleResize);
         observer.disconnect();
       };
     }
-  }, []);
+  }, [visibleCards]);
 
   const scroll = (direction) => {
     if (!cardsRef.current) return;
