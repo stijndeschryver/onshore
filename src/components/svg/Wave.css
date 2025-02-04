@@ -1,46 +1,8 @@
 .wave {
   overflow: hidden;
   transform-origin: bottom;
-  transform: scaleY(1);
-  will-change: transform;
-  transition: transform 0.1s linear;
 }
 
 .wave svg {
-  display: block;
   width: calc(265.93px * 8);
-  transform: translateX(0);
-  will-change: transform;
-}
-
-.wave-1 svg {
-  color: var(--wave1-color);
-  animation: wave1Slide 5s linear infinite;
-}
-
-.wave-2 svg {
-  color: var(--wave2-color);
-  animation: wave2Slide 5s linear infinite;
-}
-
-.wave-3 svg {
-  color: var(--wave3-color);
-}
-
-@keyframes wave1Slide {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-265.93px);
-  }
-}
-
-@keyframes wave2Slide {
-  0% {
-    transform: translateX(-265.93px);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }

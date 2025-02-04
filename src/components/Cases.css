@@ -1,3 +1,21 @@
+@keyframes wave1Slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-265.93px);
+  }
+}
+
+@keyframes wave2Slide {
+  0% {
+    transform: translateX(-265.93px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 #cases {
   background-color: var(--Seaweed);
   position: relative;
@@ -55,4 +73,14 @@
 
 .wave-corner svg {
   color: var(--Terracota);
+}
+
+.wave-1 svg {
+  color: var(--wave1-color);
+  animation: wave1Slide 5s linear infinite;
+}
+
+.wave-2 svg {
+  color: var(--wave2-color);
+  animation: wave2Slide 5s linear infinite;
 }

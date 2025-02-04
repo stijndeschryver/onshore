@@ -38,19 +38,8 @@ export const Wave = ({ index }) => {
   const patternId = `wavePattern-${index}`;
 
   return (
-    <div
-      ref={waveRef}
-      className={`wave ${waveId}`}
-      style={{ transformOrigin: 'bottom' }}
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 2040 268.18"
-        style={{
-          willChange: 'transform',
-          backfaceVisibility: 'hidden',
-        }}
-      >
+    <div ref={waveRef} className={`wave ${waveId}`}>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 268.18">
         <pattern
           id={patternId}
           width="265.93"

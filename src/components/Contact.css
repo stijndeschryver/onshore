@@ -81,6 +81,10 @@
   text-decoration: none !important;
 }
 
+.wave-3 svg {
+  color: var(--wave3-color);
+}
+
 @media (max-width: 768px) {
   #contact .content .image {
     display: none;
