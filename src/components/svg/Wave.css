@@ -8,7 +8,7 @@
 
 .wave svg {
   display: block;
-  width: calc(255px * 8);
+  width: calc(265.93px * 8); /* Updated to match new SVG width */
   transform: translateX(0);
   will-change: transform;
 }
@@ -17,41 +17,26 @@
   height: 100%;
 }
 
-.wave-1 {
-  margin-bottom: 1px;
-}
-
 .wave-1 svg {
   color: var(--wave1-color);
   animation: wave1Slide 5s linear infinite;
-  margin-bottom: -1px;
 }
 
 .wave-1 .bottom {
   background-color: var(--wave1-color);
 }
 
-.wave-2 {
-  margin-bottom: -1px;
-}
-
 .wave-2 svg {
   color: var(--wave2-color);
   animation: wave2Slide 5s linear infinite;
-  margin-bottom: -1px;
 }
 
 .wave-2 .bottom {
   background-color: var(--wave2-color);
 }
 
-.wave-3 {
-  margin-bottom: -1px;
-}
-
 .wave-3 svg {
   color: var(--wave3-color);
-  margin-bottom: -1px;
 }
 
 .wave-3 .bottom {
@@ -63,13 +48,13 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-255px);
+    transform: translateX(-265.93px);
   }
 }
 
 @keyframes wave2Slide {
   0% {
-    transform: translateX(-255px);
+    transform: translateX(-265.93px); /* Updated to match new SVG width */
   }
   100% {
     transform: translateX(0);

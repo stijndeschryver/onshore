@@ -1,5 +1,5 @@
 import './Header.css';
-import { LogoHeader } from './svg/LogoHeader.jsx';
+import { OnShore } from './svg/OnShore.jsx';
 import { useCurrentSection } from '../hooks/useCurrentSection.js';
 import { scrollToSection } from '../utils/scrollUtils.js';
 import { useState } from 'react';
@@ -23,7 +23,7 @@ export const Header = () => {
       className={`section-${currentSection} ${isMenuOpen ? 'menu-open' : ''}`}
     >
       <div className="content">
-        <LogoHeader className="LogoHeader" />
+        <OnShore className="LogoHeader" />
         <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
           <a

@@ -1,53 +1,21 @@
-import { useEffect, useRef } from 'react';
-import './WaveCorner.css';
-
 export const WaveCorner = () => {
-  const pathRef = useRef(null);
-
-  useEffect(() => {
-    const path1 =
-      'M1379,644H0V0s77,94,150,93s162-63,176,102s112.3,100.95,177.15,39.97s192.02-3.68,213.44,99.68s86.91,183.87,203.66,95.11s150.03,9.66,196.89,91.95s261.86,122.29,261.86,122.29Z';
-    const path2 =
-      'M1379,644H0V0s142,22,150,93s49,153,176,102s178.3-101.05,177.15,39.97s123.02,196.32,213.44,99.68s189.91-47.13,203.66,95.11s71.03,180.66,196.89,91.95s261.86,122.29,261.86,122.29Z';
-
-    function animate() {
-      const now = Date.now();
-      const duration = 8000;
-      const progress = (now % duration) / duration;
-
-      if (pathRef.current) {
-        const t = Math.sin(progress * Math.PI * 2) * 0.5 + 0.5;
-        pathRef.current.setAttribute('d', interpolatePath(path1, path2, t));
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    const animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame);
-  }, []);
-
-  function interpolatePath(pathA, pathB, progress) {
-    const numbersA = pathA.match(/-?\d+\.?\d*/g).map(Number);
-    const numbersB = pathB.match(/-?\d+\.?\d*/g).map(Number);
-
-    const interpolated = numbersA.map((a, i) => {
-      const b = numbersB[i];
-      return a + (b - a) * progress;
-    });
-
-    let index = 0;
-    return pathA.replace(/-?\d+\.?\d*/g, () => interpolated[index++]);
-  }
-
   return (
     <div className="wave-corner">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1379 644">
-        <path
-          ref={pathRef}
-          fill="currentColor"
-          d="M1379,644H0V0s77,94,150,93s162-63,176,102s112.3,100.95,177.15,39.97s192.02-3.68,213.44,99.68s86.91,183.87,203.66,95.11s150.03,9.66,196.89,91.95s261.86,122.29,261.86,122.29Z"
-        />
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 867.14 518.78">
+        <path fill="currentColor">
+          <animate
+            attributeName="d"
+            begin="0s"
+            dur="4s"
+            restart="always"
+            repeatCount="indefinite"
+            values="M0,0 H61.02 C96.79,0 151.2,10.07 151.2,67.75 C151.2,125.43 245.67,61.04 289.55,101.1 C343.69,150.54 266.01,201.12 339.77,259.4 C413.53,317.68 495.92,193.7 569.68,243.92 C643.44,294.14 581.45,387.52 644.22,415.77 C706.99,444.02 717.5,390.24 788,390.24 H867.14 V518.78 H0 V0;
+                    M0,0 H61.02 C96.79,0 136.77,12.14 136.77,58.98 C136.77,185.06 251.85,192.06 305.58,154.42 C359.31,116.78 424.59,134.8 416.67,219.17 C408.75,303.54 486.23,312.27 551.07,277.3 C615.91,242.33 680.37,284.07 685.81,331.47 C691.25,378.87 738.0,390.24 788.0,390.24 H867.14 V518.78 H0 V0;
+                    M0,0 H61.02 C96.79,0 151.2,10.07 151.2,67.75 C151.2,125.43 245.67,61.04 289.55,101.1 C343.69,150.54 266.01,201.12 339.77,259.4 C413.53,317.68 495.92,193.7 569.68,243.92 C643.44,294.14 581.45,387.52 644.22,415.77 C706.99,444.02 717.5,390.24 788,390.24 H867.14 V518.78 H0 V0"
+            calcMode="spline"
+            keySplines="0.4 0 0.2 1; 0.4 0 0.2 1"
+          />
+        </path>
       </svg>
     </div>
   );

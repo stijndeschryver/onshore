@@ -1,5 +1,8 @@
 import './About.css';
-import { LogoHeader } from './svg/LogoHeader.jsx';
+import { OnBrief } from './svg/OnBrief.jsx';
+import { OnCulture } from './svg/OnCulture.jsx';
+import { OnTime } from './svg/OnTime.jsx';
+import { OnBudget } from './svg/OnBudget.jsx';
 import { NavigationArrow } from './svg/NavigationArrow.jsx';
 import { useRef, useState, useEffect } from 'react';
 
@@ -10,22 +13,28 @@ export const About = () => {
 
   const originalCards = [
     {
-      id: 1,
+      id: 'OnBrief',
+      svg: OnBrief,
       content:
-        '1 ipsum dolor sit amet, consectetur adipiscing elit. Quisque' +
-        ' eleifend felis ut mauris vulputate, ac sollicitudin dui accumsan.',
+        'A clear brief is half the battle. We ask the right questions, nail the details, and ensure smooth sailing from start to finish.',
     },
     {
-      id: 2,
+      id: 'OnCulture',
+      svg: OnCulture,
       content:
-        '2 ipsum dolor sit amet, consectetur adipiscing elit. Quisque' +
-        ' eleifend felis ut mauris vulputate, ac sollicitudin dui accumsan.',
+        'A Belgian team that gets you. No language barriers, no timezone headaches—just seamless production.',
     },
     {
-      id: 3,
+      id: 'OnTime',
+      svg: OnTime,
       content:
-        '3 ipsum dolor sit amet, consectetur adipiscing elit. Quisque' +
-        ' eleifend felis ut mauris vulputate, ac sollicitudin dui accumsan.',
+        'Fast, flexible, and always on schedule. Most projects are ready in a week. Need it faster? Just say the word.',
+    },
+    {
+      id: 'OnBudget',
+      svg: OnBudget,
+      content:
+        'No hidden fees, no surprises. Our fixed pricing means you know exactly what you’re paying for—top-quality work at a fair price.',
     },
   ];
 
@@ -131,16 +140,19 @@ export const About = () => {
             <NavigationArrow direction="left" className="nav-arrow" />
           </button>
           <div className="cards" ref={cardsRef}>
-            {originalCards.map((card) => (
-              <div
-                key={card.id}
-                className="card"
-                style={{ scrollSnapAlign: 'start' }}
-              >
-                <LogoHeader className="logo" />
-                <p>{card.content}</p>
-              </div>
-            ))}
+            {originalCards.map((card) => {
+              const SvgComponent = card.svg;
+              return (
+                <div
+                  key={card.id}
+                  className="card"
+                  style={{ scrollSnapAlign: 'start' }}
+                >
+                  <SvgComponent className="logo" />
+                  <p>{card.content}</p>
+                </div>
+              );
+            })}
           </div>
           <button
             className="nav-button next"

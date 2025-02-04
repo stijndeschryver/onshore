@@ -16,13 +16,18 @@
   }
 }
 
+@scroll-timeline wave-scroll {
+  source: auto;
+  orientation: block;
+  scroll-offsets: 0%, 100%;
+}
+
 .wave {
   overflow: hidden;
   transform-origin: bottom;
   animation: stretch linear forwards;
-  animation-timeline: view();
+  animation-timeline: wave-scroll;
 }
-
 .wave svg {
   display: block;
   width: calc(255px * 8);

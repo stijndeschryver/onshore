@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import { Logo } from './Logo.jsx';
 
-export const LogoHeader = ({ className }) => (
+export const OnShore = ({ className }) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 601.42 87.31"
@@ -38,6 +37,6 @@ export const LogoHeader = ({ className }) => (
   </svg>
 );
 
-Logo.propTypes = {
+OnShore.propTypes = {
   className: PropTypes.string,
 };

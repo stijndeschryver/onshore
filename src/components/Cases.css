@@ -52,3 +52,7 @@
   width: 50%;
   margin-bottom: -1px;
 }
+
+.wave-corner svg {
+  color: var(--Terracota);
+}
