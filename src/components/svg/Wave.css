@@ -13,17 +13,9 @@
   will-change: transform;
 }
 
-.wave .bottom {
-  height: 100%;
-}
-
 .wave-1 svg {
   color: var(--wave1-color);
   animation: wave1Slide 5s linear infinite;
-}
-
-.wave-1 .bottom {
-  background-color: var(--wave1-color);
 }
 
 .wave-2 svg {
@@ -31,16 +23,8 @@
   animation: wave2Slide 5s linear infinite;
 }
 
-.wave-2 .bottom {
-  background-color: var(--wave2-color);
-}
-
 .wave-3 svg {
   color: var(--wave3-color);
-}
-
-.wave-3 .bottom {
-  background-color: var(--wave3-color);
 }
 
 @keyframes wave1Slide {
