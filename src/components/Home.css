@@ -12,10 +12,9 @@
 }
 
 #home .content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  width: fit-content;
+  gap: 5rem;
+  align-items: center;
+  justify-content: center;
 }
 
 #home .content .Logo {
@@ -23,16 +22,9 @@
   height: auto;
 }
 
-@media (max-width: 768px) {
-  #home .content .Logo {
-    width: 20rem;
-  }
-  #home .content .Logo {
-    width: 20rem;
-  }
-}
-
-#home .content h2 {
+.intro {
+  width: 40rem;
+  text-align: center;
   color: var(--Terracota);
 }
 
@@ -42,4 +34,13 @@
 
 .Logo .shore {
   fill: var(--Seaweed);
+}
+
+@media (max-width: 768px) {
+  #home .content .Logo {
+    width: 20rem;
+  }
+  #home .content .Logo {
+    width: 20rem;
+  }
 }

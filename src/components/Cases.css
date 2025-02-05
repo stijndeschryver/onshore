@@ -22,15 +22,10 @@
 }
 
 #cases .content {
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   gap: 1rem;
-  align-items: flex-start;
-}
-
-#cases .content h1 {
-  color: var(--Saffron);
+  align-items: center;
+  justify-content: center;
 }
 
 #cases video {
@@ -38,14 +33,10 @@
   height: auto;
 }
 
-@media (max-width: 768px) {
-  #cases .content h1 {
-    margin-left: 1rem;
-  }
-
-  #cases video {
-    width: 100%;
-  }
+#cases .cases-description {
+  width: 40rem;
+  text-align: center;
+  color: var(--Saffron);
 }
 
 #cases .wave {
@@ -65,10 +56,29 @@
 
 .wave-corner {
   position: absolute;
+  bottom: -4rem;
+  left: -3rem;
+  width: 35rem;
+}
+
+.wave-extension-left {
+  position: absolute;
   bottom: 0;
-  left: 0;
-  width: 50%;
-  margin-bottom: -1px;
+  right: 100%;
+  left: -100vw;
+  width: 100vw;
+  height: 17rem;
+  background-color: var(--Terracota);
+}
+
+.wave-extension-right {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  left: 30rem;
+  width: 100vw;
+  height: 1.33rem;
+  background-color: var(--Terracota);
 }
 
 .wave-corner svg {
@@ -76,11 +86,21 @@
 }
 
 .wave-1 svg {
-  color: var(--wave1-color);
+  color: var(--Terracota);
   animation: wave1Slide 5s linear infinite;
 }
 
 .wave-2 svg {
-  color: var(--wave2-color);
+  color: var(--Seaweed);
   animation: wave2Slide 5s linear infinite;
+}
+
+@media (max-width: 768px) {
+  #cases .content h1 {
+    margin-left: 1rem;
+  }
+
+  #cases video {
+    width: 100%;
+  }
 }

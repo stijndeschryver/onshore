@@ -8,34 +8,30 @@ export const Contact = () => {
       <Wave index={3} />
       <div className="content">
         <h1>Contact</h1>
-        <div className="info">
-          <div className="image">
-            <img className="Logo" src={contact} alt="Logo" />
-          </div>
-          <div className="personal">
-            <div className="personal-photo"></div>
-            <div className="personal-info">
-              <p className="personal-name">Jurgen</p>
-              <a href="tel:+32000000000" className="personal-phone">
-                +32 000 00 00 00
-              </a>
-              <a href="mailto:jurgen@onshore.com" className="personal-email">
-                jurgen@onshore.com
-              </a>
-            </div>
+        <div className="contact-text">
+          <strong>Ready to make something amazing?</strong>
+          <br />
+          Whether you’ve got a project in mind or just want to chat about what
+          we can do, we’d love to hear from you.
+        </div>
+        <div className="personal">
+          <div className="personal-photo"></div>
+          <div className="personal-info">
+            <p className="personal-name">Jurgen</p>
+            <a href="tel:+32000000000" className="personal-phone">
+              +32 000 00 00 00
+            </a>
+            <a href="mailto:jurgen@onshore.com" className="personal-email">
+              jurgen@onshore.com
+            </a>
           </div>
         </div>
-        <div className="general">
-          <a href="tel:+32000000000" className="general-phone">
-            +32 000 00 00 00
-          </a>
-          <a href="mailto:info@onshore.com" className="general-email">
-            info@onshore.com
-          </a>
-          <p className="general-address">
-            Gare Maritime, Rue Picard 11, 1000 Bruxelles
-          </p>
-        </div>
+        <img className="Logo" src={contact} alt="Logo" />
+        <p className="general-address">
+          Gare Maritime,
+          <br />
+          Rue Picard 11, 1000 Bruxelles
+        </p>
       </div>
     </section>
   );

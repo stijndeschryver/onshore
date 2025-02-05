@@ -22,36 +22,34 @@ export const Header = () => {
     <header
       className={`section-${currentSection} ${isMenuOpen ? 'menu-open' : ''}`}
     >
-      <div className="content">
-        <OnShore className="LogoHeader" />
-        <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
-          <a
-            onClick={() => handleNavClick('home')}
-            className={currentSection === 'home' ? 'active' : ''}
-          >
-            Home
-          </a>
-          <a
-            onClick={() => handleNavClick('cases')}
-            className={currentSection === 'cases' ? 'active' : ''}
-          >
-            Cases
-          </a>
-          <a
-            onClick={() => handleNavClick('about')}
-            className={currentSection === 'about' ? 'active' : ''}
-          >
-            About
-          </a>
-          <a
-            onClick={() => handleNavClick('contact')}
-            className={currentSection === 'contact' ? 'active' : ''}
-          >
-            Contact
-          </a>
-        </nav>
-      </div>
+      <OnShore className="LogoHeader" />
+      <BurgerMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+      <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+        <a
+          onClick={() => handleNavClick('home')}
+          className={currentSection === 'home' ? 'active' : ''}
+        >
+          Home
+        </a>
+        <a
+          onClick={() => handleNavClick('cases')}
+          className={currentSection === 'cases' ? 'active' : ''}
+        >
+          Cases
+        </a>
+        <a
+          onClick={() => handleNavClick('about')}
+          className={currentSection === 'about' ? 'active' : ''}
+        >
+          About
+        </a>
+        <a
+          onClick={() => handleNavClick('contact')}
+          className={currentSection === 'contact' ? 'active' : ''}
+        >
+          Contact
+        </a>
+      </nav>
     </header>
   );
 };

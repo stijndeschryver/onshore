@@ -40,12 +40,7 @@
   --Saffron: #f6c746;
   --Terracota: #f06847;
   --Seaweed: #203931;
-}
-
-:root {
-  --wave1-color: var(--Terracota);
-  --wave2-color: var(--Seaweed);
-  --wave3-color: var(--Cream);
+  --maxWidth: 1440px;
 }
 
 html {

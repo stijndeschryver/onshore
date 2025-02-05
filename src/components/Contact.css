@@ -4,34 +4,26 @@
 }
 
 #contact .content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  gap: 10rem;
-  width: 60rem;
-}
-
-#contact .content .info {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-#contact .content .image {
-  width: 25rem;
+  gap: 3rem;
 }
 
 #contact .content h1 {
   color: var(--Terracota);
 }
 
-#contact .content .info .personal {
+#contact .content .contact-text {
+  text-align: center;
+  width: 40rem;
+  color: var(--Terracota);
+}
+
+#contact .content .personal {
   display: flex;
   align-items: center;
   gap: 2rem;
 }
 
-#contact .content .info .personal .personal-photo {
+#contact .content .personal .personal-photo {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
@@ -42,31 +34,30 @@
   flex-shrink: 0;
 }
 
-#contact .content .info .personal .personal-name {
+#contact .content .personal .personal-name {
   font-weight: 700;
   color: var(--Seaweed);
 }
 
-#contact .content .info .personal .personal-phone {
+#contact .content .personal .personal-phone {
   font-weight: 700;
   color: var(--Seaweed);
   font-size: 1.5rem;
   display: block;
 }
 
-#contact .content .info .personal .personal-email {
+#contact .content .personal .personal-email {
   color: var(--Terracota);
   display: block;
 }
 
-#contact .content .general {
-  color: var(--Terracota);
-  gap: 4rem;
-  display: flex;
+#contact .content img {
+  width: 25rem;
 }
 
-#contact .content .info .general .general-email {
-  font-weight: 700;
+#contact .content .general-address {
+  color: var(--Terracota);
+  text-align: center;
 }
 
 #contact .wave {
@@ -77,19 +68,15 @@
   height: 40px;
 }
 
-#contact a {
-  text-decoration: none !important;
-}
-
 .wave-3 svg {
-  color: var(--wave3-color);
+  color: var(--Cream);
 }
 
 @media (max-width: 768px) {
   #contact .content .image {
     display: none;
   }
-  #contact .content .info {
+  #contact .content {
     gap: 2rem;
   }
 }
