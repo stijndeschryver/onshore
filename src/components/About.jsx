@@ -134,14 +134,11 @@ export const About = () => {
     <section id="about">
       <div className="content">
         <h1>Who we are</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
-          eleifend felis ut mauris vulputate, ac sollicitudin dui accumsan.
-          Mauris cursus eu quam at condimentum. Vivamus metus metus, imperdiet
-          ut molestie a, feugiat a nisl. Duis eu dolor viverra, maximus turpis
-          nec, fermentum arcu. Nulla porta, nisi vehicula imperdiet accumsan,
-          neque mi pellentesque ipsum, id suscipit ante felis ac diam.
-          Pellentesque dapibus magna odio.
+        <p className="intro">
+          For years, we saw digital production work being outsourced offshore
+          and nearshore. Sure, it was cheap. But the quality? Let’s just say it
+          left a lot to be desired. We knew there had to be a better way:
+          OnShore.
         </p>
         <div className="cards-container">
           <button

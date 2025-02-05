@@ -5,22 +5,23 @@
 
 #contact .content {
   display: flex;
-  gap: 2rem;
-}
-
-#contact .content .image {
-  background: white;
-  height: 30rem;
-  width: 25rem;
+  align-items: center;
+  flex-direction: column;
+  gap: 10rem;
+  width: 60rem;
 }
 
 #contact .content .info {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
-#contact .content .info h1 {
+#contact .content .image {
+  width: 25rem;
+}
+
+#contact .content h1 {
   color: var(--Terracota);
 }
 
@@ -58,11 +59,10 @@
   display: block;
 }
 
-#contact .content .info .general {
+#contact .content .general {
   color: var(--Terracota);
+  gap: 4rem;
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
 }
 
 #contact .content .info .general .general-email {

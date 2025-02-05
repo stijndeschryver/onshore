@@ -28,6 +28,10 @@
   font-weight: 200;
 }
 
+#about .content .intro {
+  font-size: 1.5rem;
+}
+
 .cards-container {
   position: relative;
   display: flex;

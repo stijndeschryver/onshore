@@ -4,6 +4,10 @@ import './Wave.css';
 
 export const Wave = ({ index }) => {
   const waveRef = useRef(null);
+  const numRepetitions = 32;
+  const patternWidth = 265.93;
+  const totalWidth = patternWidth * numRepetitions;
+
   useEffect(() => {
     const element = waveRef.current;
     if (!element) return;
@@ -39,23 +43,28 @@ export const Wave = ({ index }) => {
 
   return (
     <div ref={waveRef} className={`wave ${waveId}`}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2040 268.18">
-        <pattern
-          id={patternId}
-          width="265.93"
-          height="268.18"
-          patternUnits="userSpaceOnUse"
-        >
-          <path
-            fill="currentColor"
-            d="M 0,24.04
-               C 66.48,24.04 66.48,0 132.97,0
-               C 199.45,0 199.45,24.04 265.93,24.04
-               L 265.93,268.18
-               L 0,268.18
-               Z"
-          />
-        </pattern>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox={`0 0 ${totalWidth} 268.18`}
+      >
+        <defs>
+          <pattern
+            id={patternId}
+            width="265.93"
+            height="268.18"
+            patternUnits="userSpaceOnUse"
+          >
+            <path
+              fill="currentColor"
+              d="M 0,24.04
+                 C 66.48,24.04 66.48,0 132.97,0
+                 C 199.45,0 199.45,24.04 265.93,24.04
+                 L 265.93,268.18
+                 L 0,268.18
+                 Z"
+            />
+          </pattern>
+        </defs>
         <rect width="100%" height="100%" fill={`url(#${patternId})`} />
       </svg>
     </div>

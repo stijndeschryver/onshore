@@ -1,14 +1,17 @@
 import './Contact.css';
 import { Wave } from './svg/Wave.jsx';
+import contact from '../assets/contact.svg';
 
 export const Contact = () => {
   return (
     <section id="contact">
       <Wave index={3} />
       <div className="content">
-        <div className="image"></div>
+        <h1>Contact</h1>
         <div className="info">
-          <h1>Contact</h1>
+          <div className="image">
+            <img className="Logo" src={contact} alt="Logo" />
+          </div>
           <div className="personal">
             <div className="personal-photo"></div>
             <div className="personal-info">
@@ -21,21 +24,17 @@ export const Contact = () => {
               </a>
             </div>
           </div>
-          <div className="general">
-            <a href="tel:+32000000000" className="general-phone">
-              +32 000 00 00 00
-            </a>
-            <a href="mailto:info@onshore.com" className="general-email">
-              info@onshore.com
-            </a>
-            <p className="general-address">
-              Gare Maritime
-              <br />
-              Rue Picard 11
-              <br />
-              1000 Bruxelles
-            </p>
-          </div>
+        </div>
+        <div className="general">
+          <a href="tel:+32000000000" className="general-phone">
+            +32 000 00 00 00
+          </a>
+          <a href="mailto:info@onshore.com" className="general-email">
+            info@onshore.com
+          </a>
+          <p className="general-address">
+            Gare Maritime, Rue Picard 11, 1000 Bruxelles
+          </p>
         </div>
       </div>
     </section>
