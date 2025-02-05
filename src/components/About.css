@@ -16,20 +16,18 @@
   color: var(--Seaweed);
 }
 
-#about .content p {
+#about .content .intro {
+  font-size: 1.5rem;
   width: 50rem;
   text-align: center;
   color: var(--Cream);
   font-weight: 200;
 }
 
-#about .content .intro {
-  font-size: 1.5rem;
-}
-
 .cards-container {
   position: relative;
   display: flex;
+  gap: 1rem;
   align-items: center;
   width: 100%;
   justify-content: center;
@@ -40,6 +38,7 @@
   display: flex;
   gap: var(--gap);
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   width: calc(
     (var(--card-width) * var(--visible-cards)) +
@@ -63,6 +62,10 @@
   flex-direction: column;
   flex-shrink: 0;
   scroll-snap-align: start;
+  align-items: flex-start;
+  color: var(--Cream);
+  font-weight: 200;
+  padding-right: 1rem;
 }
 
 #about .content .cards .card:not(:last-child) {
@@ -106,8 +109,8 @@
 
 .nav-arrow {
   fill: var(--Cream);
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
 }
 
 @media (max-width: 1440px) {
@@ -140,5 +143,12 @@
 
   #about .content .cards .card:not(:last-child) {
     border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  #about .content .intro {
+    font-size: 1rem;
+    width: 20rem;
   }
 }

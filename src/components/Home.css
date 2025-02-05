@@ -22,7 +22,7 @@
   height: auto;
 }
 
-.intro {
+#home .intro {
   width: 40rem;
   text-align: center;
   color: var(--Terracota);
@@ -42,5 +42,10 @@
   }
   #home .content .Logo {
     width: 20rem;
+  }
+  #home .intro {
+    width: 20rem;
+    text-align: center;
+    color: var(--Terracota);
   }
 }

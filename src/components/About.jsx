@@ -8,8 +8,6 @@ import { useRef, useState, useEffect } from 'react';
 
 export const About = () => {
   const cardsRef = useRef(null);
-  const [isAtStart, setIsAtStart] = useState(true);
-  const [isAtEnd, setIsAtEnd] = useState(false);
   const [visibleCards, setVisibleCards] = useState(4);
 
   const originalCards = [
@@ -52,65 +50,22 @@ export const About = () => {
     }
   };
 
-  const checkScrollPosition = () => {
-    if (!cardsRef.current) return;
-
-    const container = cardsRef.current;
-    const cardWidth = container.firstElementChild?.offsetWidth || 0;
-    // Get the computed gap from CSS variables
-    const gap = parseInt(getComputedStyle(container).gap) || 16;
-    const totalCardWidth = cardWidth + gap;
-    const scrollPosition = container.scrollLeft;
-    const maxScroll = container.scrollWidth - container.clientWidth;
-
-    // Calculate the number of cards that can be scrolled
-    const scrollableCards = originalCards.length - visibleCards;
-
-    // Calculate current card index based on scroll position
-    const currentCardIndex = Math.round(scrollPosition / totalCardWidth);
-
-    // Update navigation buttons state
-    setIsAtStart(scrollPosition <= 0);
-    setIsAtEnd(
-      currentCardIndex >= scrollableCards ||
-        Math.abs(maxScroll - scrollPosition) < 5
-    );
-  };
-
   useEffect(() => {
     // Initial setup
     updateVisibleCards();
-    checkScrollPosition();
 
     // Add event listeners
     const container = cardsRef.current;
     if (container) {
-      container.addEventListener('scroll', checkScrollPosition);
-
-      // Set up intersection observer for smoother updates
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach(() => checkScrollPosition());
-        },
-        { threshold: 0.5 }
-      );
-
-      container.childNodes.forEach((card) => {
-        observer.observe(card);
-      });
-
       // Handle window resize
       const handleResize = () => {
         updateVisibleCards();
-        checkScrollPosition();
       };
 
       window.addEventListener('resize', handleResize);
 
       return () => {
-        container.removeEventListener('scroll', checkScrollPosition);
         window.removeEventListener('resize', handleResize);
-        observer.disconnect();
       };
     }
   }, [visibleCards]);
@@ -144,7 +99,6 @@ export const About = () => {
           <button
             className="nav-button prev"
             onClick={() => scroll('prev')}
-            disabled={isAtStart}
             aria-label="Previous card"
           >
             <NavigationArrow direction="left" className="nav-arrow" />
@@ -163,7 +117,6 @@ export const About = () => {
           <button
             className="nav-button next"
             onClick={() => scroll('next')}
-            disabled={isAtEnd}
             aria-label="Next card"
           >
             <NavigationArrow className="nav-arrow" />

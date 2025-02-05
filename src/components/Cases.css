@@ -29,11 +29,13 @@
 }
 
 #cases video {
+  z-index: 3;
   width: 50rem;
   height: auto;
 }
 
 #cases .cases-description {
+  z-index: 3;
   width: 40rem;
   text-align: center;
   color: var(--Saffron);
@@ -100,7 +102,24 @@
     margin-left: 1rem;
   }
 
+  #cases .cases-description {
+    width: 20rem;
+    font-weight: 200;
+  }
+
   #cases video {
-    width: 100%;
+    width: 90%;
+    margin-top: -5rem;
+  }
+  .wave-corner {
+    bottom: -2rem;
+    left: -2rem;
+    width: 23rem;
+  }
+  .wave-extension-right {
+    bottom: 0;
+    right: 0;
+    left: 20rem;
+    height: 1.55rem;
   }
 }
