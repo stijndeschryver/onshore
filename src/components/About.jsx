@@ -20,12 +20,6 @@ export const About = () => {
         'A clear brief is half the battle. We ask the right questions, nail the details, and ensure smooth sailing from start to finish.',
     },
     {
-      id: 'OnCulture',
-      svg: OnCulture,
-      content:
-        'A Belgian team that gets you. No language barriers, no timezone headaches—just seamless production.',
-    },
-    {
       id: 'OnTime',
       svg: OnTime,
       content:
@@ -36,6 +30,12 @@ export const About = () => {
       svg: OnBudget,
       content:
         "No hidden fees, no surprises. Our fixed pricing means you know exactly what you're paying for—top-quality work at a fair price.",
+    },
+    {
+      id: 'OnCulture',
+      svg: OnCulture,
+      content:
+        'A Belgian team that gets you. No language barriers, no timezone headaches—just seamless production.',
     },
   ];
 

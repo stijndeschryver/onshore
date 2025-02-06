@@ -23,12 +23,16 @@
   gap: 2rem;
 }
 
+#contact .content .personal .personal-info {
+  margin-top: -0.5rem;
+}
+
 #contact .content .personal .personal-photo {
   width: 10rem;
   height: 10rem;
   border-radius: 50%;
   outline: 2px solid var(--Terracota);
-  background-image: url('../assets/jurgen.jpeg');
+  background-image: url('../assets/jurgen.jpg');
   background-size: cover;
   background-position: center;
   flex-shrink: 0;

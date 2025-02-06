@@ -86,7 +86,7 @@
   right: 100%;
   left: 30rem;
   width: 100vw;
-  height: 1.33rem;
+  height: 1.48rem;
   background-color: var(--Terracota);
 }
 
@@ -113,7 +113,7 @@
     width: 20rem;
   }
 
-  #cases video {
+  #cases .video-container {
     width: 90%;
     margin-top: -5rem;
   }

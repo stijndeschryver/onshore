@@ -1,22 +1,32 @@
 import './Home.css';
-{
-  /*import { Logo } from './svg/Logo';*/
-}
-import logo from '../assets/logo_with_baseline.svg';
+import { SVGSequence } from './svg/svGSequence';
+
+// Import all SVGs from the SVG_v4 folder
+const svgFiles = import.meta.glob('/src/components/svg/logo_sequence/*.svg', {
+  eager: true,
+});
+const svgSequence = Object.values(svgFiles).map((module) => module.default);
+
+// Debug log to check if SVGs are being imported
+console.log('SVG Files:', svgFiles);
+console.log('SVG Sequence:', svgSequence);
 
 export const Home = () => {
+  if (svgSequence.length === 0) {
+    console.warn('No SVG files found in the sequence');
+  }
+
   return (
     <>
       <div className="home-spacer" />
       <section id="home">
         <div className="content">
-          {/*<Logo className="Logo" />*/}
-          <img className="Logo" src={logo} alt="Logo" />
+          <SVGSequence className="Logo" svgFiles={svgSequence} />
           <p className="intro">
             Forget off-shore. Forget near-shore. This is&nbsp;
             <strong>OnShore</strong>, a fully independent digital production
-            company based in Belgium, powered by local talent with a passion for
-            making amazing digital stuff. At affordable rates.
+            studio based in Belgium, powered by local talent with a passion for
+            making amazing digital stuff. On a budget.
           </p>
         </div>
       </section>

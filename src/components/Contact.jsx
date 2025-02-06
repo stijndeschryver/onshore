@@ -18,7 +18,7 @@ export const Contact = () => {
           <div className="personal-photo"></div>
           <div className="personal-info">
             <p className="personal-name">Jurgen</p>
-            <a href="tel:+32000000000" className="personal-phone">
+            <a href="tel:+3232489939170" className="personal-phone">
               +32 489 93 91 70
             </a>
             <a href="mailto:jurgen@onshore.com" className="personal-email">
