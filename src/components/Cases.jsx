@@ -2,6 +2,7 @@ import './Cases.css';
 import { Wave } from './svg/Wave.jsx';
 import { WaveCorner } from './svg/WaveCorner.jsx';
 import { useCases } from '../hooks/useCases.js';
+import { VideoWithLoading } from './Video.jsx';
 
 export const Cases = () => {
   const { data, error } = useCases();
@@ -15,15 +16,7 @@ export const Cases = () => {
           <div>Error: {error}</div>
         ) : (
           data.map((caseItem) => (
-            <video
-              key={caseItem.id}
-              src={caseItem.video_uri}
-              autoPlay
-              loop
-              muted
-              playsInline
-              controls={false}
-            />
+            <VideoWithLoading key={caseItem.id} src={caseItem.video_uri} />
           ))
         )}
         <p className="cases-description">
@@ -33,7 +26,6 @@ export const Cases = () => {
           <strong>
             You focus on the big ideas, we’ll take care of the rest
           </strong>
-          . And please, have a look at the ‘rest’.
         </p>
         <div className="wave-extension-left"></div>
         <WaveCorner />
