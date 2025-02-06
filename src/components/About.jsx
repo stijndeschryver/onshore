@@ -9,6 +9,8 @@ import { useRef, useState, useEffect } from 'react';
 export const About = () => {
   const cardsRef = useRef(null);
   const [visibleCards, setVisibleCards] = useState(4);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
 
   const originalCards = [
     {
@@ -37,6 +39,18 @@ export const About = () => {
     },
   ];
 
+  const checkScrollable = () => {
+    const container = cardsRef.current;
+    if (!container) return;
+
+    // Check if we can scroll left
+    setCanScrollLeft(container.scrollLeft > 0);
+
+    // Check if we can scroll right
+    const maxScroll = container.scrollWidth - container.clientWidth;
+    setCanScrollRight(container.scrollLeft < maxScroll - 1); // Subtract 1 to account for rounding
+  };
+
   const updateVisibleCards = () => {
     const width = window.innerWidth;
     if (width > 1200) {
@@ -53,6 +67,7 @@ export const About = () => {
   useEffect(() => {
     // Initial setup
     updateVisibleCards();
+    checkScrollable();
 
     // Add event listeners
     const container = cardsRef.current;
@@ -60,12 +75,20 @@ export const About = () => {
       // Handle window resize
       const handleResize = () => {
         updateVisibleCards();
+        checkScrollable();
+      };
+
+      // Handle scroll
+      const handleScroll = () => {
+        checkScrollable();
       };
 
       window.addEventListener('resize', handleResize);
+      container.addEventListener('scroll', handleScroll);
 
       return () => {
         window.removeEventListener('resize', handleResize);
+        container.removeEventListener('scroll', handleScroll);
       };
     }
   }, [visibleCards]);
@@ -91,7 +114,7 @@ export const About = () => {
         <h1>Who we are</h1>
         <p className="intro">
           For years, we saw digital production work being outsourced offshore
-          and nearshore. Sure, it was cheap. But the quality? Let’s just say it
+          and nearshore. Sure, it was cheap. But the quality? Let's just say it
           left a lot to be desired. We knew there had to be a better way:
           OnShore.
         </p>
@@ -99,6 +122,7 @@ export const About = () => {
           <button
             className="nav-button prev"
             onClick={() => scroll('prev')}
+            disabled={!canScrollLeft}
             aria-label="Previous card"
           >
             <NavigationArrow direction="left" className="nav-arrow" />
@@ -117,6 +141,7 @@ export const About = () => {
           <button
             className="nav-button next"
             onClick={() => scroll('next')}
+            disabled={!canScrollRight}
             aria-label="Next card"
           >
             <NavigationArrow className="nav-arrow" />
