@@ -1,11 +1,19 @@
 import './Home.css';
-import { SVGSequence } from './svg/svGSequence';
+import { SVGSequence } from './svg/svgSequence';
 
-// Import all SVGs from the SVG_v4 folder
-const svgFiles = import.meta.glob('/src/components/svg/logo_sequence/*.svg', {
+// Import all SVGs statically using relative path
+const svgContext = import.meta.glob('./svg/logo_sequence/*.svg', {
   eager: true,
+  import: 'default',
 });
-const svgSequence = Object.values(svgFiles).map((module) => module.default);
+
+// Sort the SVGs by filename to ensure consistent order
+const svgSequence = Object.entries(svgContext)
+  .sort(([pathA], [pathB]) => pathA.localeCompare(pathB))
+  .map(([_, svg]) => svg);
+
+// Debug in production
+console.log('Production SVG paths:', svgSequence);
 
 export const Home = () => {
   if (svgSequence.length === 0) {
