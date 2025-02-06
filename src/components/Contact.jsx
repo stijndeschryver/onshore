@@ -19,7 +19,7 @@ export const Contact = () => {
           <div className="personal-info">
             <p className="personal-name">Jurgen</p>
             <a href="tel:+32000000000" className="personal-phone">
-              +32 000 00 00 00
+              +32 489 93 91 70
             </a>
             <a href="mailto:jurgen@onshore.com" className="personal-email">
               jurgen@onshore.com
