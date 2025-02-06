@@ -7,10 +7,6 @@ const svgFiles = import.meta.glob('/src/components/svg/logo_sequence/*.svg', {
 });
 const svgSequence = Object.values(svgFiles).map((module) => module.default);
 
-// Debug log to check if SVGs are being imported
-console.log('SVG Files:', svgFiles);
-console.log('SVG Sequence:', svgSequence);
-
 export const Home = () => {
   if (svgSequence.length === 0) {
     console.warn('No SVG files found in the sequence');
