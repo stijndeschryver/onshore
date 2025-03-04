@@ -11,6 +11,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-large bg-card-1',
     },
     {
@@ -20,6 +21,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-wide bg-card-2',
     },
     {
@@ -29,6 +31,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-wide bg-card-3',
     },
     {
@@ -38,6 +41,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-wide bg-card-4',
     },
     {
@@ -47,6 +51,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-large bg-card-5',
     },
     {
@@ -56,6 +61,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-wide bg-card-6',
     },
     {
@@ -65,6 +71,7 @@ export const Cases = () => {
       description:
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' +
         ' Vivamus pretium lacus a massa dapibus molestie. Donec accumsan auctor tristique. Integer pellentesque, sem ut pulvinar euismod, arcu augue pulvinar felis, et feugiat augue tellus quis ipsum. Quisque dapibus massa consequat lorem mattis placerat. Praesent porta, justo vitae molestie rhoncus, turpis ex consequat massa, sed semper elit dolor sit amet diam. Cras tristique mi at ex dictum malesuada. Aliquam sed justo sem. Sed rutrum, ligula ac maximus eleifend, ante elit elementum justo, a dictum diam libero non justo.',
+      image: '/image.jpg',
       className: 'card-full-width bg-card-7',
     },
   ];
@@ -75,7 +82,11 @@ export const Cases = () => {
       <div className="content">
         <div className="masonry-grid">
           {cards.map((card) => (
-            <div key={card.id} className={`card ${card.className}`}>
+            <div
+              key={card.id}
+              className={`card ${card.className}`}
+              style={{ backgroundImage: `url(${card.image})` }}
+            >
               <div className="card-content">
                 <div className="card-title">{card.title}</div>
                 <div className="card-subtitle">{card.subtitle}</div>

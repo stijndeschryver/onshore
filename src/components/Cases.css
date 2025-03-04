@@ -47,6 +47,8 @@
   flex-direction: column;
   justify-content: flex-end;
   min-height: 140px;
+  background-size: cover;
+  background-position: center;
 }
 
 /* Card Content */
@@ -83,43 +85,6 @@
 .card-full-width {
   grid-column: span 4;
   grid-row: span 1;
-}
-
-/* Background Colors - Replace with your images */
-.bg-card-1 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-2 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-3 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-4 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-5 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-6 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
-}
-.bg-card-7 {
-  background-image: url('/image.jpg');
-  background-size: cover;
-  background-position: center;
 }
 
 /* Responsive Adjustments */
