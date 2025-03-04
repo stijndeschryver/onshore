@@ -1,106 +1,339 @@
-#contact {
-  background-color: var(--Cream);
+@keyframes wave1Slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-265.93px);
+  }
+}
+
+@keyframes wave2Slide {
+  0% {
+    transform: translateX(-265.93px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#cases {
+  background-color: var(--Seaweed);
   position: relative;
 }
 
-#contact .content {
-  gap: 3rem;
-}
-
-#contact .content h1 {
-  color: var(--Terracota);
-}
-
-#contact .content .contact-text {
-  text-align: center;
-  width: 40rem;
-  color: var(--Terracota);
-}
-
-#contact .content .personal {
-  display: flex;
+#cases .content {
+  position: relative;
+  gap: 1rem;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
 }
 
-#contact .content .personal .personal-info {
-  margin-top: -0.5rem;
+/* Grid Container - updated to be more like the example */
+.masonry-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  list-style: none;
 }
 
-#contact .content .personal .personal-photo {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
-  outline: 2px solid var(--Terracota);
-  background-image: url('../assets/jurgen.jpg');
-  background-size: cover;
-  background-position: center;
-  flex-shrink: 0;
+/* Base Card Styling - updated properties */
+.card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 420px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
-#contact .content .personal .personal-name {
+/* Card size variations - adjusted to match example */
+.card-large {
+  flex: 0 0 calc(60% - 10px); /* Fixed width with proper gap accounting */
+  height: 420px;
+}
+
+.card-wide {
+  flex: 0 0 calc(40% - 10px); /* Fixed width with proper gap accounting */
+  height: 420px;
+}
+
+.card-full-width {
+  flex: 0 0 100%;
+  height: 300px;
+}
+
+/* Card Content */
+.card-content {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--layer, #333);
+}
+
+.card-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.title-container {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 0;
+  z-index: 2;
+  color: white;
+  max-width: 300px;
+}
+
+.title-container .h6 {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.title-container .h3 {
+  font-size: 20px;
   font-weight: 700;
-  color: var(--Seaweed);
+  margin: 0;
+  color: white;
 }
 
-#contact .content .personal .personal-phone {
-  font-weight: 700;
-  color: var(--Seaweed);
-  font-size: 1.5rem;
+/* Dark theme specific styles */
+.dark .h3,
+.dark .h6 {
+  color: #0f1115;
+}
+
+/* Overlay for expanded card */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  will-change: opacity;
+}
+
+/* Expanded card container */
+.card-content-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
   display: block;
+  pointer-events: none;
 }
 
-#contact .content .personal .personal-email {
-  color: var(--Terracota);
-  display: block;
+.card-content-container.open {
+  top: 0;
+  left: 0;
+  right: 0;
+  position: fixed;
+  z-index: 1001;
+  overflow: hidden;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#contact .content img {
-  width: 25rem;
+.open .card-content {
+  width: unset;
+  height: unset;
+  max-width: 700px;
+  width: 90%;
+  margin: 0 auto;
+  pointer-events: auto;
 }
 
-#contact .content .general-address {
-  color: var(--Terracota);
-  text-align: center;
+.open .card-image-container {
+  height: 300px;
 }
 
-#contact .wave {
+.open .title-container {
+  top: 30px;
+  left: 30px;
+}
+
+.content-container {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  max-height: 60vh;
+  overflow-y: auto;
+  line-height: 1.6;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .masonry-grid {
+    gap: 10px;
+  }
+
+  .card {
+    flex: 0 1 calc(50% - 5px) !important;
+    height: 280px !important;
+    min-height: 280px;
+  }
+
+  .card-image-container {
+    height: 280px;
+  }
+
+  .card-image {
+    top: unset !important;
+    bottom: -10px !important;
+    left: 0 !important;
+    right: 0 !important;
+    min-width: 250px;
+    min-height: 300px;
+  }
+
+  .title-container {
+    visibility: hidden;
+  }
+
+  .open .card-content {
+    width: 95%;
+  }
+
+  .open .card-image-container {
+    height: 200px;
+  }
+
+  .card-content-container.open {
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    flex: 0 1 100% !important;
+    height: 280px !important;
+  }
+
+  .open .title-container {
+    top: 15px;
+    left: 15px;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+}
+
+#cases .wave {
   position: absolute;
   bottom: 100%;
   left: 0;
   width: 100%;
+}
+
+#cases .wave-1 {
+  height: 70px;
+}
+
+#cases .wave-2 {
   height: 40px;
 }
 
-.wave-3 svg {
-  color: var(--Cream);
+.wave-corner {
+  position: absolute;
+  bottom: -4rem;
+  left: -3rem;
+  width: 35rem;
+}
+
+.wave-extension-left {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  left: -100vw;
+  width: 100vw;
+  height: 17.203rem;
+  background-color: var(--Terracota);
+}
+
+.wave-extension-right {
+  position: absolute;
+  bottom: 0;
+  right: 100%;
+  left: 30rem;
+  width: 100vw;
+  height: 1.48rem;
+  background-color: var(--Terracota);
+}
+
+.wave-corner svg {
+  color: var(--Terracota);
+}
+
+.wave-1 svg {
+  color: var(--Terracota);
+  animation: wave1Slide 5s linear infinite;
+}
+
+.wave-2 svg {
+  color: var(--Seaweed);
+  animation: wave2Slide 5s linear infinite;
 }
 
 @media (max-width: 768px) {
-  #contact .content .contact-text {
+  #cases .content h1 {
+    margin-left: 1rem;
+  }
+
+  #cases .cases-description {
     width: 20rem;
   }
-  #contact .content .personal {
-    gap: 0.5rem;
-    flex-direction: column;
+
+  #cases .video-container {
+    width: 90%;
+    margin-top: -5rem;
   }
-  #contact .content .personal .personal-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
+  .wave-corner {
+    bottom: -2rem;
+    left: -2rem;
+    width: 23rem;
   }
-  #contact .content .personal .personal-name {
-    font-size: 1.5rem;
-  }
-  #contact .content .personal .personal-photo {
-    width: 6rem;
-    height: 6rem;
-  }
-  #contact .content img {
-    width: 15rem;
-  }
-  #contact .content {
-    gap: 1rem;
+  .wave-extension-right {
+    bottom: 0;
+    right: 0;
+    left: 20rem;
+    height: 1.55rem;
   }
 }
