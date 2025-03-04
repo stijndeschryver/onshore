@@ -89,15 +89,15 @@
   color: white;
 }
 
-.title-container .h6 {
-  font-size: 14px;
-  font-weight: 300;
+.title-container h1 {
+  font-size: 20px;
+  font-weight: 700;
   margin-bottom: 4px;
 }
 
-.title-container .h3 {
-  font-size: 20px;
-  font-weight: 700;
+.title-container h2 {
+  font-size: 14px;
+  font-weight: 300;
   margin: 0;
 }
 
@@ -176,53 +176,7 @@
   line-height: 1.6;
 }
 
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .masonry-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .card-large {
-    grid-column: span 2;
-    grid-row: span 1;
-    min-height: 200px;
-  }
-
-  .card-full-width {
-    grid-column: span 2;
-  }
-
-  .open .card-content {
-    width: 95%;
-  }
-
-  .open .card-image-container {
-    height: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .masonry-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .card-large,
-  .card-wide,
-  .card-full-width {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-
-  .open .title-container {
-    top: 15px;
-    left: 15px;
-  }
-
-  .content-container {
-    padding: 20px;
-  }
-}
-
+/* Wave Styling */
 #cases .wave {
   position: absolute;
   bottom: 100%;
@@ -258,7 +212,6 @@
 .wave-extension-right {
   position: absolute;
   bottom: 0;
-  right: 100%;
   left: 30rem;
   width: 100vw;
   height: 1.48rem;
@@ -279,7 +232,30 @@
   animation: wave2Slide 5s linear infinite;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 200px;
+  }
+
+  .card-full-width {
+    grid-column: span 2;
+  }
+
+  .open .card-content {
+    width: 95%;
+  }
+
+  .open .card-image-container {
+    height: 200px;
+  }
+
   #cases .content h1 {
     margin-left: 1rem;
   }
@@ -292,15 +268,40 @@
     width: 90%;
     margin-top: -5rem;
   }
+
   .wave-corner {
     bottom: -2rem;
     left: -2rem;
     width: 23rem;
   }
+
   .wave-extension-right {
     bottom: 0;
     right: 0;
     left: 20rem;
     height: 1.55rem;
   }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large,
+  .card-wide,
+  .card-full-width {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .open .title-container {
+    top: 15px;
+    left: 15px;
+  }
+
+  .content-container {
+    padding: 20px;
+  }
+}
 }

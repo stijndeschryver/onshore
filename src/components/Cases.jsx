@@ -133,8 +133,8 @@ export const Cases = () => {
                     layoutId={`title-container-${currentCard.id}`}
                     layout="position"
                   >
-                    <span className="h6">{currentCard.brand}</span>
-                    <h2 className="h3">{currentCard.title}</h2>
+                    <h1>{currentCard.brand}</h1>
+                    <h2>{currentCard.title}</h2>
                   </motion.div>
                   <motion.div
                     className="content-container"

@@ -27,8 +27,8 @@ export const Card = ({ card, handleOpen }) => {
           layoutId={`title-container-${card.id}`}
           layout="position"
         >
-          <h1>{card.title}</h1>
-          <h2>{card.brand}</h2>
+          <h1>{card.brand}</h1>
+          <h2>{card.title}</h2>
         </motion.div>
       </motion.div>
     </li>
