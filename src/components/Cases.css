@@ -28,24 +28,128 @@
   justify-content: center;
 }
 
-#cases video {
-  z-index: 3;
+/* Grid Container */
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
 }
 
-#cases .video-container {
+/* Base Card Styling */
+.card {
   position: relative;
-  z-index: 3;
-  width: 50rem;
-  height: auto;
-  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 140px;
 }
 
-#cases .cases-description {
-  z-index: 3;
-  width: 40rem;
-  text-align: center;
-  color: var(--Saffron);
-  font-weight: 200;
+/* Card Content */
+.card-content {
+  position: relative;
+  padding: 16px;
+  color: white;
+  z-index: 2;
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 4px;
+}
+
+.card-subtitle {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Card Size Variations */
+.card-large {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 300px;
+}
+
+.card-wide {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.card-full-width {
+  grid-column: span 4;
+  grid-row: span 1;
+}
+
+/* Background Colors - Replace with your images */
+.bg-card-1 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-2 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-3 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-4 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-5 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-6 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.bg-card-7 {
+  background-image: url('/image.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .masonry-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-large {
+    grid-column: span 2;
+    grid-row: span 1;
+    min-height: 200px;
+  }
+
+  .card-full-width {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonry-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-large,
+  .card-wide,
+  .card-full-width {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
 }
 
 #cases .wave {
