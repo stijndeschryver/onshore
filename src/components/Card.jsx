@@ -3,10 +3,7 @@ import PropTypes from 'prop-types';
 
 export const Card = ({ card, handleOpen }) => {
   return (
-    <li
-      className={`card ${card.className}`}
-      onClick={() => handleOpen(card.id)}
-    >
+    <li className="card" onClick={() => handleOpen(card.id)}>
       <motion.div
         className="card-content"
         layoutId={`card-container-${card.id}`}
@@ -42,7 +39,6 @@ Card.propTypes = {
     brand: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
-    className: PropTypes.string.isRequired,
   }).isRequired,
   handleOpen: PropTypes.func.isRequired,
 };
