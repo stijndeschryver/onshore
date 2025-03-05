@@ -118,7 +118,7 @@ export const About = () => {
           left a lot to be desired. We knew there had to be a better way:
           OnShore.
         </p>
-        <div className="cards-container">
+        <div className="on-cards-container">
           <button
             className="nav-button prev"
             onClick={() => scroll('prev')}
@@ -127,11 +127,11 @@ export const About = () => {
           >
             <NavigationArrow direction="left" className="nav-arrow" />
           </button>
-          <div className="cards" ref={cardsRef}>
+          <div className="on-cards" ref={cardsRef}>
             {originalCards.map((card) => {
               const SvgComponent = card.svg;
               return (
-                <div key={card.id} className="card">
+                <div key={card.id} className="on-card">
                   <SvgComponent className="logo" />
                   <p>{card.content}</p>
                 </div>

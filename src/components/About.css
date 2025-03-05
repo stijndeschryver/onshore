@@ -25,7 +25,7 @@
   margin-bottom: 1rem;
 }
 
-.cards-container {
+.on-cards-container {
   position: relative;
   display: flex;
   gap: 1rem;
@@ -35,7 +35,7 @@
   scroll-snap-align: none;
 }
 
-#about .content .cards {
+#about .content .on-cards {
   display: flex;
   gap: var(--gap);
   overflow-x: auto;
@@ -51,11 +51,11 @@
   -webkit-overflow-scrolling: touch;
 }
 
-#about .content .cards::-webkit-scrollbar {
+#about .content .on-cards::-webkit-scrollbar {
   display: none;
 }
 
-#about .content .cards .card {
+#about .content .on-cards .on-card {
   width: var(--card-width);
   min-width: var(--card-width);
   display: flex;
@@ -69,26 +69,26 @@
   padding-right: 1rem;
 }
 
-#about .content .cards .card:not(:last-child) {
+#about .content .on-cards .on-card:not(:last-child) {
   border-right: 1px solid var(--Saffron);
 }
 
-#about .content .cards .card .logo {
+#about .content .on-cards .on-card .logo {
   height: 2rem;
 }
 
-#about .content .cards .card .logo .on {
+#about .content .on-cards .on-card .logo .on {
   fill: var(--Cream);
 }
 
-#about .content .cards .card .logo .brief,
-#about .content .cards .card .logo .culture,
-#about .content .cards .card .logo .time,
-#about .content .cards .card .logo .budget {
+#about .content .on-cards .on-card .logo .brief,
+#about .content .on-cards .on-card .logo .culture,
+#about .content .on-cards .on-card .logo .time,
+#about .content .on-cards .on-card .logo .budget {
   fill: var(--Saffron);
 }
 
-#about .content .cards .card p {
+#about .content .on-cards .on-card p {
   text-align: left;
   max-width: 100%;
 }
@@ -138,11 +138,11 @@
     width: var(--card-width);
   }
 
-  .cards-container {
+  .on-cards-container {
     overflow: hidden;
   }
 
-  #about .content .cards .card:not(:last-child) {
+  #about .content .on-cards .on-card:not(:last-child) {
     border-right: none;
   }
 }
@@ -152,7 +152,7 @@
     font-size: 1rem;
     width: 20rem;
   }
-  .card {
+  .on-card {
     width: 90vw;
     max-width: calc(100% - 2rem);
     margin-left: auto;
