@@ -5,10 +5,10 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 140px;
   background-size: cover;
   background-position: center;
   cursor: pointer;
+  will-change: grid-column, grid-row;
 }
 
 .card-content {
