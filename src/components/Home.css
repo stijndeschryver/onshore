@@ -19,7 +19,12 @@
   width: 100%;
 }
 
+#home .content .Logo {
+  scale: 100%;
+}
+
 #home .intro {
+  margin-top: -8rem;
   width: 40rem;
   font-size: 1.5rem;
   font-weight: 300;
