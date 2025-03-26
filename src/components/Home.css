@@ -20,10 +20,18 @@
 }
 
 #home .Logo {
+  width: 70rem;
+  aspect-ratio: 6 / 5;
+  position: absolute;
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
-  position: absolute;
+}
+
+#home .Logo canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 #home .intro {
@@ -37,6 +45,7 @@
 
 @media (max-width: 768px) {
   #home .Logo {
+    width: 90vw;
     top: 35%;
     left: 50%;
   }
