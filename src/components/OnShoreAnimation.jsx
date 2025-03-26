@@ -61,7 +61,7 @@ export const OnShoreAnimation = ({ className }) => {
       window.createjs.Ticker.addEventListener('tick', stage);
 
       // Make responsive - keep the container and canvas proportions
-      window.AdobeAn.makeResponsive(true, 'width', false, 1, [
+      window.AdobeAn.makeResponsive(true, 'width', true, 1, [
         canvas,
         anim_container,
         dom_overlay_container,
