@@ -21,7 +21,7 @@ export const Contact = () => {
             <a href="tel:+3232489939170" className="personal-phone">
               +32 489 93 91 70
             </a>
-            <a href="mailto:jurgen@onshore.com" className="personal-email">
+            <a href="mailto:jurgen@onshore.be" className="personal-email">
               jurgen@onshore.com
             </a>
           </div>
@@ -30,7 +30,7 @@ export const Contact = () => {
         <p className="general-address">
           Gare Maritime,
           <br />
-          Rue Picard 11, 1000 Bruxelles
+          Picard street 11, 1000 Bruxelles
         </p>
       </div>
     </section>
