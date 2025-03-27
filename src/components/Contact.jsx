@@ -22,7 +22,7 @@ export const Contact = () => {
               +32 489 93 91 70
             </a>
             <a href="mailto:jurgen@onshore.be" className="personal-email">
-              jurgen@onshore.com
+              jurgen@onshore.be
             </a>
           </div>
         </div>
