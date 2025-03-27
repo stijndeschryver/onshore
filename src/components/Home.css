@@ -20,7 +20,8 @@
 }
 
 #home .Logo {
-  width: 70rem;
+  width: 130%;
+  max-width: 70rem;
   aspect-ratio: 6 / 5;
   position: absolute;
   top: 40%;
@@ -35,7 +36,7 @@
 }
 
 #home .intro {
-  margin-top: 20%;
+  margin-top: 20rem;
   width: 40rem;
   font-size: 1.5rem;
   font-weight: 300;
@@ -45,14 +46,13 @@
 
 @media (max-width: 768px) {
   #home .Logo {
-    width: 90vw;
     top: 35%;
     left: 50%;
   }
 
   #home .intro {
-    margin-top: 20%;
+    margin-top: 10rem;
     font-size: 1rem;
-    width: 20rem;
+    width: 90%;
   }
 }
